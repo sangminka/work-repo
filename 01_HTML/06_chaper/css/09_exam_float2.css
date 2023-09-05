@@ -1,0 +1,29 @@
+li{
+    /* 점 없애기 */
+    list-style-type: none;
+    /* 가로배치
+    display: inline-block; */
+}
+#menu li{
+     /* 가로배치 */
+     display: inline-block;
+}
+
+/* 메뉴:오른쪽 정렬 */
+#menu{
+    float: right;
+    /* 글자크기 */
+    font-size: 14px;
+    /* 바깥여백 - 위쪽 */
+    margin-top: 20px;
+}
+/* 수목원 로고 : 왼쪽 정렬 */
+#logo{
+    float: left;
+}
+/* 본문 이미지 */
+#main_image{
+    clear: both;
+    padding-top: 20px;
+    /* float: left; */
+}

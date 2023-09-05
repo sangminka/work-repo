@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- TODO form 태그(부모태그, 생략가능) > input (자식태그) -->
+    <!-- TODO 1) 라벨 + 입력양식 -->
+    <!-- for="변수명" == id="변수명" -->
+    <!-- label 클릭하면 input 양식에 포커스 생김 -->
+    <label for="name">이름</label>
+    <input type="text" id="name">
+    <br/>
+
+    <!-- TODO 1) 패스워드 -->
+    <input type="password" />
+    <br/>
+
+    <!-- TODO 2) 파일 대화 사화상자 -->
+     <input type="file">
+     <br/>
+
+     <!-- TODO 3) 체크박스 -->
+     <input type="checkbox"> 좋음
+     <br/>
+     <input type="checkbox"> 나쁨
+     <br/>
+
+     <!-- TODO 4) 라디오박스 -->
+     <!-- 주의점 : 2개 name="변수명" 일치 -->
+     <input type="radio" name="gender">남자
+     <input type="radio" name="gender">여자
+
+     <!-- TODO 5)Select 박스 -->
+     <!-- 속성: selected - 화면에 먼저 보일 문자 -->
+     <!-- 사용법: <option>항복</option> -->
+     <select name="" id="">
+        <option>김밥</option>
+        <option selected>떡볶이</option>
+        <option>순대</option>
+        <option>어묵</option>
+     </select>
+
+     <!-- TODO 6)textarea : 긴 글쓰기 -->
+     <!-- cols="가로크기" rows="세로크기" -->
+     <textarea cols="30" rows="10"></textarea>
+</body>
+</html>

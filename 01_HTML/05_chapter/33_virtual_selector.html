@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상 요소(앞/뒤에 추가하기)</title>
+    <style>
+        /* 가상 요소(앞/뒤에 추가하기) */
+        /* 태그의 앞에 content 값추가하기 */
+        p::before{
+            content: "😀";
+        }
+         /* 태그의 뒤에 content 값추가하기 */
+        p::after{
+            content: "😎";
+        }
+    </style>
+</head>
+<body>
+    <p>홍길동 입니다.</p>
+</body>
+</html>

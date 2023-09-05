@@ -1,0 +1,10 @@
+fieldset{
+    /* 가로 */
+    width: 30vw;
+    /* 중앙정렬 */
+    margin: 0 auto;
+}
+#user_id,.img-button{
+    /* 라벨 + 이미지 모두 세로 중앙 정렬 */
+    vertical-align: middle;
+}

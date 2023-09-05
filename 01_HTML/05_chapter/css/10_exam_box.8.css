@@ -1,0 +1,27 @@
+/* 문제 풀이 : 예제 (모든 태그에 박스 적용하기 )*/
+
+body{
+    /* 사용법 border: 선두깨 선스타일 선색상 */
+    border: 1px solid red;
+}
+h3{
+    /* 사용법 border: 선두깨 선스타일 선색상 */
+   border: 1px solid blue; 
+}
+
+p{
+    /* 사용법 border: 선두깨 선스타일 선색상 */
+    border: 1px solid greenyellow;
+}
+ul{
+    /* 사용법 border: 선두깨 선스타일 선색상 */
+    border:1px solid red
+}
+li:nth-child(2n){
+    /* 사용법 border: 선두깨 선스타일 선색상 */
+    border: 1px solid blue;
+}
+li:nth-child(2n+1){
+    /* 사용법 border: 선두깨 선스타일 선색상 */
+    border: 1px solid purple;
+}

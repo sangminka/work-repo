@@ -1,0 +1,48 @@
+/*  문제풀이 */
+/* css 디자인 여백 초기화 */
+/* 웹브라우저(크롭,익스플로어,파이어폭스 등) */
+*{
+    padding: 0;
+    margin: 0;
+}
+
+#banner{
+    /* border:선두깨 선스타일 선색상 */
+    border: 1px solid rgb(236, 219, 236);
+    /* 가로크기 */
+    width: 320px;
+    /* 세로크기 */
+    height: 180px;
+    /* 배경색 */
+    background-color: rgb(236, 219, 236);
+    /* 안쪽 여백 */
+    padding: 20px;
+    /* 바깥 여백 */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+p{
+    /* 바깥여백 : 위쪾 */
+    margin-top:  20px;
+}
+
+#button{
+    /* border:선두깨 선스타일 선색상 */
+    border: 1px solid #e1285a;
+    /* 둥근 사각형 모서리 */
+    border-radius: 5px;
+    /* 가로크기 */
+    width: 100px;
+    /* 글자 크기 */
+    font-size: 12px;
+    /* 글자 정령 : 가운데 */
+    text-align: center;
+    /* 배경색 */
+    background-color: #e1285a;
+    /* 글자색깔 */
+    color: white;
+    /* 바깥여백 */
+    margin-top: 30px;
+    /* 안쪽 여백 */
+    padding: 5px;
+}

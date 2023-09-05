@@ -1,0 +1,8 @@
+h3{
+    /* 외각선 */
+    /* border: 선두깨 선스타일 선색상 */
+    border: 5px solid #C71F8F;
+    padding: 10px ;
+    /* margin: 10px; */
+    width: 450px;
+}

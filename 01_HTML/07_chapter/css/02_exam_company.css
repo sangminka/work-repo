@@ -1,0 +1,130 @@
+/* 문제 풀이 */
+/* 여백 초기화 */
+*{
+    padding: 0;
+    margin: 0;
+}
+/* 목록 점 없애기 */
+li{
+    list-style-type: none;
+}
+/* 전체 페이지 */
+#page{
+    /* 가로 */
+    width: 995px;
+    /* 중앙 정렬 */
+    margin: 0px auto;
+    /* 임시 */
+    /* background-color: beige; */
+
+}
+/* 머리말 디자인 */
+header{
+    /* 가로 */
+    width: 995px;
+    /* 세로 */
+    height: 100px;
+    /* 외각선 */
+    border-bottom: 1px solid #cccccc;
+    /* 임시 */
+    /* background-color: aqua; */
+}
+
+
+ #logo{
+    /* 로고디자인 : 왼쪽배치 */
+    float: left;
+    /* 임시 */
+    /* background-color: aquamarine; */
+    
+}
+
+/* 소메뉴 디자인: 오른쪽 배치 */
+#top{
+    /* 오른쪽 배치 */
+    float: right;
+    /* 바깥여백 - 위쪽*/
+    margin-top: 30px;
+    /* 임시 */
+    /* background-color: blueviolet; */
+}
+
+/* 더미 div : float 영향 제거용 */
+.clear{
+    /* float 영향 제거 */
+    clear: both;
+}
+/* 대메뉴 크기 */
+nav{
+    /* 가로 */
+    width: 995px;
+    /* 세로 */
+    height: 70px;
+   /* 바깥여백 위 */
+    margin-top: 10px;
+} 
+/* 대메뉴(이미지들) 세로 -> 가로배치 */
+/* inline-block : 가로로 배치하되 크기가 모자라면 줄바꿈이됨 */
+/* 세로 -> 가로배치 : display(inline-block), float:left */
+nav li{
+    /* 가로 */
+    width: 150px;
+    /* 가로배치 */
+    display: inline-block;
+    /* float: left; */
+}
+/* 본문 : 좌측 */
+section{
+    /* 왼쪽 배치 */
+    float: left;
+    /* 가로 */
+    width: 600px;
+    /* 임시 */
+    /* background-color: aqua; */
+}
+aside{
+    /* 우측배치 -- 좌측배치  */
+    float: right;
+    /* 가로 */
+    width: 370px;
+    /* 임시 */
+    /* background-color: blueviolet; */
+}
+
+footer{
+    /* 가로 */
+    width: 995px;
+    /* 세로 */
+    height: 100px;
+    /* 바깥여백 위쪽 */
+    margin-top: 20px;
+    /* 외각선 */
+    border-top: 1px solid #cccccc;
+    /* 임시 */
+    /* background-color: blue; */
+     
+}
+/* 꼬리말 - 주소 */
+#address{
+    /* 왼쪽 배치 */
+    float: left;
+    /* 바깥여백 - 위쪽 */
+    margin-top: 30px;
+    /* 바깥여백 - 왼쪽 */
+    margin-left: 50px;
+    /* 임시 */
+    /* background-color: aqua; */
+}
+
+/* 꼬리말 - 고객센터 */
+#customer{
+    /* 오른쪽 배치 */
+    float:  right;
+    /* 바깥여백 - 위 */
+    margin-top: 20px;
+    margin-right: 80px;
+    /* 임시 */
+    /* background-color: blueviolet; */
+}
+
+

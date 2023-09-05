@@ -1,0 +1,23 @@
+/* id선택자 : #변수명, class 선택자 : .변수명, * : 전체 선택자, 태그 선택자 */
+/* div 특징 : 블럭(block) 속성, 자동 줄바꿈 발생, p태그, h1~h6 태그 */
+/* span 특징 : 인라인(inline) 속성, 줄바꿈 없음, input태그, img 태그 등 */
+/*             widht, height 속성 무시, 안에 컨탠츠(글)에 따라 크기가 정해짐 */
+/* TODO: display 속성 : block <-> inline 변경가능 */
+.box{
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    display: inline;
+}
+.box2{
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    display: inline;
+}
+.box3{
+    width: 50px;
+    height: 50px;
+    background-color: yellow;
+    display: inline;
+}

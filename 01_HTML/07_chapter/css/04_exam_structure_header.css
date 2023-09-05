@@ -1,0 +1,91 @@
+
+/* 구글 웹폰트 import(css: 파일 가져오기의 뜻) */
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+li{
+    /* 점 없애기 */
+    list-style-type: none;
+}
+a{
+    /* a태그 밑줄 없애기 */
+    text-decoration: none;
+}
+#container{
+    /* 가로 */
+    width: 1200px;
+    /* 중앙 정렬 */
+    margin: 0 auto;
+}
+/* ************************************ */
+/* 헤더 영역 -로고 와 네비게이션 */
+/* ************************************ */
+
+header{
+    /* 가로 */
+    width: 100%;    
+    /* 배경색 */
+    background-color: #045;
+    height: 100px;
+}
+
+/* 헤더 로고(#logo,왼쪽) + 네비게이션(nav,오른쪽) */
+/* 로고 왼쪽 */
+#logo{
+    /* 가로 */
+    width: 250px;
+    /* 왼쪽 배치 */
+    float: left;
+    /* 세로 */
+    height: 100px;
+    /* 세로 중앙 정렬 : height 값 == line-height 값 */
+    line-height: 100px;
+    /* 바깥여백 - 왼쪽 */
+    padding-left: 20px;
+}
+/* 구글 웹폰트 적용 */
+#logo h1 {
+    font-family: 'Merienda', cursive;
+    /* 글자색 */
+    color: white;
+    /* 글자크기 */
+    font-size: 40px;
+    /* 글자 굵게 : bold(키워드), 숫자도 가능 900까지*/
+    font-weight: 600;
+    margin: 0 0 30px 20px;
+}
+
+/* 헤더 - 네비게이션(nav) : 오른쪽 배치 */
+nav{
+    /* 오른쪽 배치 */
+    float: right;
+    /* 가로 */
+    width: 900px;
+    /* 메뉴를 아래로 내리기 위해 안쪽 여백 추가 */
+    line-height: 100px;
+}
+#topMenu li{
+   
+    /* 가로 배치 */
+    display: inline-block;
+    
+}
+#topMenu li a{
+    /* 글자 크기 */
+    font-size: 1.1em;
+    /* 글자 색 */
+    color: white;
+    /* 글자 굵게 : bold(키워드), 숫자도 가능 900까지*/
+    font-weight: 600;
+    /* 안쪽 여백 : 축약식 */
+    /* padding : 상하 좌우 */
+    padding: 20px 60px;
+}
+#topMenu li a:hover{
+    /* 글자색 */
+    color: skyblue;
+}
+

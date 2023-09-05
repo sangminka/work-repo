@@ -1,0 +1,28 @@
+.box{
+    /* 가로 */
+    width: 100px;
+    /* 세로 */
+    height: 100px;
+    /* 가로 중앙 정렬 */
+    margin: 50px auto;
+    /* 외곽선 */
+    border: 1px solid black;
+    /* 배경색 */
+    background-color: orange;
+    /* all 모든속성 */
+    /* easy-in : 시작(천천히진행) - 끝(빨리진행) :속도차이가 있는 효과 부여 */
+    /* 2s : 2초(지속시간) */
+    /* 사용법 : transition: 속성 속도차이효과 지속시간; */
+    transition: all ease-in 2s;
+}
+
+/* 마우스가 위로 올라가면 :hover */
+
+.box:hover{
+    /* 가로 */
+    width: 200px;
+    /* 세로 */
+    width: 200px;
+    /* 배경색 */
+    background-color: red;
+}

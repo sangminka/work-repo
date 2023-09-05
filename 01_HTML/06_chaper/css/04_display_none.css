@@ -1,0 +1,13 @@
+/* id 선택자 : #변수명 {} */
+/* display: none <-> block (활용 : 드롭다운 메뉴) */
+#box{
+    /* 배경색 */
+    background-color: yellow;
+    /* 가로 */
+    width: 100px;
+    /* 세로 */
+    height: 100px;
+    /* display 속성 */
+    /* 화면에서 보이지 않게 만듬 */
+    display: none;
+}

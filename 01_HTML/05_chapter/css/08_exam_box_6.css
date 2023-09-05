@@ -1,0 +1,16 @@
+h3{
+    /* 왼쪽 외각선 */
+    /* border-left: 선두깨 선스타일 선색깔 */
+    border-left: 8px solid blue;
+    /* 안쪽 여백(왼쪽) */
+    padding: 0 0 0 10px;
+}
+p{
+    /* 외각선 */
+    /* border: 선두깨 선스타일 선색깔 */
+    border: 1px solid black;
+    /* 안쪽 여백 */
+    padding: 20px;
+    width: 400px;
+    margin: 20px 0 0 0 ;
+}

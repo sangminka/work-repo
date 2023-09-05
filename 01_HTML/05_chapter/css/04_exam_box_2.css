@@ -1,0 +1,20 @@
+#title1 {
+  color: blueviolet;
+}
+#weather {
+  color: red;
+  /* 굵은 글씨 */
+  font-weight: bold;
+}
+#title2 {
+  color: green;
+}
+#location {
+  /* 굵은 글씨 */
+  font-weight: bolder;
+}
+#notice {
+  color: blue;
+  /* 굵은 글씨 */
+  font-weight: bolder;
+}

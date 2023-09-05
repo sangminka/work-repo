@@ -1,0 +1,28 @@
+/* span : inline 속성, width,height속성 무시, 글만큼 크기가 정해짐 */
+.box{
+    background-color: blue;
+    /* block속성 지정 */
+    display: block;
+    /* 가로크기 */
+    width: 50px;
+    /* 세로크기 */
+    height: 50px;
+}
+.box2{
+    background-color: red;
+    /* block속성 지정 */
+    display: block;
+    /* 가로크기 */
+    width: 50px;
+    /* 세로크기 */
+    height: 50px;
+}
+.box3{
+    background-color: yellow;
+    /* block속성 지정 */
+    display: block;
+    /* 가로크기 */
+    width: 50px;
+    /* 세로크기 */
+    height: 50px;
+}

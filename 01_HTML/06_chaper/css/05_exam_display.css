@@ -1,0 +1,22 @@
+ul{
+    /* 외각선 */
+    /* border : 선두깨 선스타일 선색상 */
+    border: 1px solid #cccccc;
+    /* 둥근사각형(모서리) */
+    border-radius: 10px;
+    /* 배경색 */
+    background-color: #f5f7e4;
+    /* 안쪽 여백 */
+    padding: 30px;
+    /* 가로크기 */
+    width: 640px;
+
+}
+li{
+    /* 앞에 목록 점 없애기 */
+    list-style-type: none;
+    /* display  */
+    display: inline-block;
+    /* 바깥여백-왼쪽 */
+    margin-left: 20px;
+}

@@ -1,0 +1,38 @@
+body{
+    /* 배경 이미지 */
+    background-image: url(../image/back_img.jpg);
+    /* 이미지 반복 중단 속성 */
+    background-repeat: no-repeat;
+}
+
+p{
+    /* 글자 크기 */
+    font-size: 20px;
+    text-align: center;
+    /* 바깥여백 - 위쪽 */
+    margin-top: 160px;
+    /* 바깥여백 - 왼쪽 */
+    margin-left: 130px;
+    /* 가로크기 */
+    width: 280px;
+
+}
+
+div{
+    /* border: 선두깨 선스타일 선색깔  */
+    border: 1px solid blue;
+    text-align: center;
+    /* 배경색 */
+    background-color: blue;
+    /* 글자색 */
+    color: white;
+    /* 바깥여배 왼쪽 */
+    margin-left: 200px;
+    /* 바깥여백 위쪽 */
+    margin-top: 30px;
+    /* 가로크기 */
+    width: 120px;
+    /* 안쪽여백 */
+    padding: 8px;
+
+}

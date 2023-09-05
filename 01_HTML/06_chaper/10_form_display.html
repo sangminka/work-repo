@@ -1,0 +1,127 @@
+<!-- 10_form_display.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/10_form_display.css">
+  </head>
+  <body>
+    <div id="container">
+      <!-- 주문 정보 시작 -->
+      <form name="order">
+        <!-- fieldset : 외곽 박스를(그룹핑) 그려주는 html 태그 -->
+        <fieldset>
+          <!-- legend : 외곽 박스의 제목 html 태그 -->
+          <legend>주문 정보</legend>
+          <ul>
+            <!-- 이름 시작 -->
+            <li>
+              <!-- 유효성 체크 : 필수, 최대자리수(maxlength) 8자리  -->
+
+              <label class="field" for="billingName">이름 : </label>
+              <input
+                type="text"
+                class="input-box"
+                id="billingName"
+                name="billingName"
+                maxlength="8"
+                required
+              />
+            </li>
+            <!-- 이름 끝 -->
+            <!-- 연락처 시작 -->
+            <li>
+              <!-- 유효성 체크 : 필수(required), 최소자리수(minlength) 8자리  -->
+
+              <label class="field" for="billingTel">연락처 : </label>
+              <input
+                type="text"
+                class="input-box"
+                id="billingTel"
+                name="billingTel"
+                minlength="8"
+                required
+              />
+            </li>
+            <!-- 연락처 끝 -->
+            <!-- 주소 시작 -->
+            <li>
+              <label class="field" for="billingAddr">주소 : </label>
+              <input
+                type="text"
+                class="input-box"
+                id="billingAddr"
+                name="billingAddr"
+              />
+            </li>
+            <!-- 주소 끝 -->
+          </ul>
+        </fieldset>
+
+      </form>
+      <!-- 배송 정보 시작 -->
+      <form name="ship">
+        <fieldset>
+          <legend>배송 정보</legend>
+          <ul>
+            <!-- 배송정보 시작 -->
+            <li>
+              <input type="checkbox" id="shippingInfo" name="shippingInfo" />
+              <label for="bill_info" class="check"
+                >주문 정보와 배송 정보가 같습니다</label
+              >
+            </li>
+            <!-- 배송정보 끝 -->
+            <!-- 이름 시작 -->
+            <li>
+              <!-- 유효성 체크 : 필수, 최대자리수(maxlength) 8자리  -->
+              <label class="field" for="shippingName">이름 : </label>
+              <input
+                type="text"
+                class="input-box"
+                id="shippingName"
+                name="shippingName"
+                maxlength="8"
+                required
+              />
+            </li>
+            <!-- 이름 끝 -->
+            <!-- 연락처 시작 -->
+            <li>
+              <!-- 유효성 체크 : 필수, 최소자리수(minlength) 8자리  -->
+              <label class="field" for="shippingTel">연락처 : </label>
+              <input
+                type="text"
+                class="input-box"
+                id="shippingTel"
+                name="shippingTel"
+                minlength="8"
+                required
+              />
+            </li>
+            <!-- 연락처 끝 -->
+            <!-- 주소 시작 -->
+            <li>
+              <!-- 유효성 체크 : 필수  -->
+              <label class="field" for="shippingAddr">주소 : </label>
+              <input
+                type="text"
+                class="input-box"
+                id="shippingAddr"
+                name="shippingAddr"
+                required
+              />
+            </li>
+            <!-- 주소 끝 -->
+          </ul>
+        </fieldset>
+        <!-- 결제 버튼 시작 -->
+        <button type="submit" class="order">결제하기</button>
+        <!-- 결제 버튼 끝 -->
+      </form>
+    </div>
+  </body>
+</html>

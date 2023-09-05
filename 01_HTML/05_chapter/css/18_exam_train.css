@@ -1,0 +1,62 @@
+/* 같은 선택자일 경우 (기본) : 디자인 적용 우선순위 - > 밑으로 갈수록 우선됨 */
+
+table,th,td{
+    /* 외각선 */
+    /* border: 선 두깨, 선스타일, 선색깔 */
+    border: 1px solid #cccccc;
+    
+    
+    
+}
+table{
+    /* 가로 크기 */
+    /* 화면 단위: px(고정크기), %(반응형단위)
+                , vw (가로, viewport width) vh(세로, viewport height)*/
+    /* viewport: 모니터의 화면(pc 모티너에 맞추어 보임, 테이블에 맞추어 보임) */
+    /* 예) 코딩시 100vw(가로) - > pc,테블릿 등에서 적절하게 화면을 맞추어 줌 */
+    width: 610px;
+    /* 테이블 선사이 간격 붙이기 */
+    border-collapse: collapse;
+}
+/* 행 */
+tr{
+    /* 글자 정렬 : 중앙 */
+    text-align: center;
+}
+/* 열 */
+td, th{
+    /* 안쪽 여백 */
+    padding: 5px;
+}
+/* 테이블 제목: 배경색 세로크기 */
+#table_title{
+    height: 30px;
+    background-color: #eeeeee;
+}
+
+/* 1열: 분홍색(배경색 */
+.train{
+    /* 밑줄 */
+    text-decoration: underline;
+    /* 글자색 */
+    color: #f1477b;
+    /* 배경색 */
+    background-color: #fbdbf2;
+    /* 굵은 글씨 */
+    font-weight: bold;
+
+}
+
+/* 참고: 생략해도 됨 */
+#col1,#col4{
+    /* 가로크기 */
+    width: 90px;
+}
+#col2,#col3{
+    /* 가로크기 */
+    width: 60px;
+}
+#col5,#col6{
+    /* 가로크기 */
+    width: 80px;
+}

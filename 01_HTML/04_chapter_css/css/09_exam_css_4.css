@@ -1,0 +1,10 @@
+.bold{
+    /* 굵은 글씨 */
+    font-weight: bold;
+}
+.location{
+    /* 글자색 */
+    color: green;
+    /* 밑줄 */
+    text-decoration: underline;
+}

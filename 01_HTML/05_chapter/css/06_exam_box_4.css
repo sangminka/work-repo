@@ -1,0 +1,27 @@
+#title1{
+    /* border-top: 선두께 선스타일 선색상 */
+    border-top: 2px solid black;
+    
+}
+
+#title2{
+    /* border-left: 선두께 선스타일 선색상 */
+    border-left: 6px solid #e1285a;
+    
+}
+
+
+#title3{
+    /* border: 선두께 선스타일 선색상 */
+    border: 2px solid skyblue;
+    /* TODO: 둥근 사각형 속성 */
+    /* TODO: 사용법 - border-radius: 크기; (크기가 클수록 원이됨 */
+    border-radius: 3px;
+    
+
+}
+
+#title1,#title2,#title3{
+    width: 350px;
+    padding: 5px;
+}

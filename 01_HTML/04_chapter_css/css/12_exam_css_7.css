@@ -1,0 +1,28 @@
+h3{
+    /* 글자 색 */
+    color: blue;
+    /* 글자 스타일 */
+    font-family: '맑은고딕';
+}
+li{
+    /* 목록 앞에 사각형 */
+    list-style-type: square;
+    /* 글자 크기 */
+    font-size: 16px;
+}
+span{
+    /* 굵은 글씨 */
+    font-weight: bold;
+    
+}
+p{
+    /* 글자 크기 */
+    font-size: 14px;
+    /* 자간 == 글자 세로 사이 간격 */
+    line-height: 150%;
+}
+
+body{
+    /* 글자 스타일 */
+    font-family: '돋음';
+}

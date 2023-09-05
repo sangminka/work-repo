@@ -1,0 +1,17 @@
+/* 글자 세로 간격 속성 */
+p{
+    /* 글자크기 */
+    font-size: 14px;
+    /* 글자 세로 간격 */
+    line-height: 180%;
+}
+
+#fly{
+    color: red;
+    font-weight: bold;
+}
+
+.blue{
+    color: blue;
+    font-weight: bold;
+}

@@ -1,0 +1,23 @@
+body{
+    /* 배경색 */
+    background-color: pink;
+}
+
+.container{
+    /* 가로 */
+    width: 500px;
+    /* 세로 */
+    height: 250px;
+    /* 배경색 */
+    background-color: orange;
+    /* 절대좌표 */
+    position: absolute;
+    /* 왼쪽 */
+    left: 50%;
+    /* 위쪽 */
+    top: 50%;
+    /* 애니메이션 함수 : div 를 위치 이동시키는 함수 */
+    /* 보정 : 박스의 가로/세로 크기의 반만큼 위치 이동해야 중심이 중앙에 위치함 */
+    /* 사용법 :  transform: translate(가로크기, 세로크기); */
+    transform: translate(-50%, -50%);
+}

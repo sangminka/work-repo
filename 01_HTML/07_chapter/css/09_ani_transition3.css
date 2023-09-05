@@ -1,0 +1,45 @@
+/* 공통속성 : 2개의 div에 모두 디자인됨 */
+div{
+    /* 가로 */
+    width: 100px;
+    /* 세로 */
+    height: 100px;
+    /* 바깥여백 */
+    margin: 30px;
+    /* 좌측 배치 : 가로배치 (display: inline - block */
+    float: left;
+}
+
+/* 1st 박스 */
+.bg-tr{
+    /* 배경색 */
+    background-color: skyblue;
+    /* TODO: 애니메이션 부여 */
+    /* ease : 시작(천천히효과 부여) 중간(빨리효과부여) 끝(천천히효과부여) */
+    /* 사용법 : trasition: 속성 효과 지속시간(s,ms); */
+    transition:  all ease 1s;
+}
+/* 1st 마우스 위로 */
+.bg-tr:hover{
+    /* 배경색 */
+    background-color: blue;
+}
+
+/* 2st 박스 */
+.border-tr{
+    /* 배경색 */
+    background-color: orange;
+        /* TODO: 애니메이션 부여 */
+    /* linear :  등속 시작 - 중간 - 끝 모두 속도가 같음 */
+    /* 사용법 : trasition: 속성 효과 지속시간(s,ms); */
+    transition:  all linear 1s;
+}
+/* 2st 박스 마우스 위로 */
+.border-tr:hover{
+    /* 배경색 */
+    background-color: red;
+    /* 둥근 사각형 */
+    border-radius: 50%;
+
+
+}

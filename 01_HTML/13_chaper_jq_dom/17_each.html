@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .p1 {
+        color: red;
+    }
+    .p2 {
+        color: blue;
+    }
+    .p3 {
+        color: green;
+    }
+</style>
+<body>
+    <p class="target">
+        <span class="lo">Lorem</span>
+        <span class="ip">Ipsum</span>
+        <span class="do">Dolor</span>
+    </p>
+    <script src="http://code.jquery.com/jquery-3.1.0.js"></script>
+    <script>
+        $(function(){
+            // 위의 p 태그 각각 선택해서 색깔을 빨강/파랑/녹색을 적용하세요
+            // 내부 반복문 실행 : .each()
+            let i = 1;// 초기값
+            $("p").each(function(){
+                $(this).addClass("p" + i)
+                i++; // 카운트 ( 1 ~ 3 )
+            })
+        })
+    </script>
+</body>
+</html>

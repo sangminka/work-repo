@@ -1,0 +1,32 @@
+footer{
+    /* 가로 */
+    width: 1200px;
+    /* 세로 */
+    height: 100px;
+    /* 외각선 위 */
+    border-top: 1px solid #222;
+    /* 바깥여백 위*/
+    margin-top: 50px;
+}
+
+    
+#bottomMenu ul{
+    /* 바깥여백 - 위 */
+    margin-top: 15px;
+    margin-left: 80px;
+}
+/* 꼬리말 : li -> 세로 -> 가로 */
+#bottomMenu ul li{
+    /*가로 배치 */
+    display: inline-block;
+    /* 외각선 오른쪽 */
+    border-right: 1px solid #ddd;
+    /* padding : (상하) (좌우) */
+    padding:  5px 20px;
+
+  
+}
+#bottomMenu ul li a{
+    font-size: 15px;
+    color: #666;
+}

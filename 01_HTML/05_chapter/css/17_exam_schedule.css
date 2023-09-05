@@ -1,0 +1,47 @@
+/* 공통 속성 : 
+    선택자,선택자2...
+*/
+table,td{
+    border: 1px solid #aaaaaa;
+    
+}
+
+table{
+    /* 테이블 선사이 간격 붙이기 속성 */
+    border-collapse: collapse;
+    /* 가로 넓이 */
+    width: 610px;
+    /* 글자 크기 */
+    font-size: 12px;
+    /* 바깥여백 위쪽 */
+    margin-top: 15px;
+}
+
+tr{
+    
+    height: 60px;
+
+}
+td{
+    
+    width: 76px;
+    padding: 5px;
+}
+/* 날짜 */
+div{
+    /* 가로 넓이 */
+    width: 610px;
+    /* 오른쪽 정렬 */
+    text-align: right;
+    
+}
+h3{
+    /* 왼쪽 - 외각선 */
+    /* border - left : 선두깨 선스타일 선 색상 */
+    border-left: 6px solid green;
+    /* 안쪽 여백 - 왼쪽 */
+    padding-left: 10px;
+}
+body{
+    color: #aaaaaa;
+}

@@ -1,0 +1,39 @@
+/* flex(플랙스) Layout : 배치 기능(좌/중앙/우) 가로/세로 모두 가능 */
+/* TODO: flex 사용시 주의점 : 부모 div - 자식 div 형태에서 속성을 부모 div에 줘야함 */
+/* 부모 div */
+.container{
+    /* 배경색 */
+    background-color: beige;
+    /* 가로 */
+    width: 1580px;
+    /* 세로 */
+    height: 750px;
+    /* flex 정의 */
+    display: flex;
+    /* TODO : 가로 중앙 정의 */
+    justify-content: center;
+    /* 가로 왼쪽 배치 */
+    /* justify-content: flex-start; */
+    /* 가로 오른쪽 배치 */
+    /* justify-content: flex-end; */
+
+    /* TODO : 세로  중앙 배치 */
+     align-items: center;
+     /* 세로 위쪽 배치 */
+     /* align-items: flex-start; */
+     /* 세로 아래쪽 배치 */
+     /* align-items: end; */
+}
+
+/* 자식들 */
+.item{
+    /* 가로 */
+    width: 100px;
+    /* 세로 */
+    height: 100px;
+    /* 배경색 */
+    background-color: blue;
+    /* 바깥여백 */
+    margin: 10px;
+    
+}

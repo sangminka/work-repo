@@ -1,0 +1,57 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+/* 로고 디자인 */
+#logo {
+  /* 외각선 */
+  border: 1px solid red;
+  /* 왼쪽 배치 */
+  float: left;
+  /* 바깥여백 */
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+/* 소메뉴 디자인 */
+#top {
+  /* 외각선 */
+  border: 1px solid red;
+  /* 오른쪽 배치 */
+  float: right;
+  /* 바깥여백 */
+  margin-top: 30px ;
+  margin-right: 20px;
+}
+/* 대 메뉴 */
+    #menu {
+    /* float 영향 제거 */
+  clear: both;
+  /* 외각선 */
+  border: 1px solid #443258;
+  /* 글자색 */
+  color: white;
+  /* 배경색 */
+  background-color: #443e58;
+  /* 세로크기 */
+  height: 40px;
+  /* 글자 중앙정렬 */
+  text-align: center;
+  /* 안쪽여백 위 */
+  padding-top: 15px;
+}
+
+#menu li {
+  /* 목록 점 없애기 */
+  display: inline-block;
+ 
+}
+li{
+    list-style-type: none;
+}
+.item{
+    /* 바깥여백 오른쪽 */
+    margin-right: 30px;
+    /* 바깥여백 왼쪽 */
+    margin-left: 30px;
+}

@@ -1,0 +1,22 @@
+body{
+    /* 배경색 */
+background-color: yellow;
+
+}
+
+div{
+    /* border:선굵기 선종류 /색깔 */
+    border: 1px solid black;
+    /* 배경색 */
+    background-color: blue;
+    /* 글자색 */
+    color:white;
+    /* 가로 넓이 */
+    width: 120px;
+    /* 세로 넓이 */
+    height: 25px;
+    /* 안쪽 여백 */
+    padding: 10px;
+    /* 글자 정렬 */
+    text-align: center;
+}

@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style-type: none;
+}
+    
+
+#container{
+    /* 가로크기 */
+    width: 600px;
+    /* 중앙 정렬 */
+    margin: 0 auto;
+}
+fieldset{
+    /* 외각선 */
+    border: 1px solid lightgray;
+    /* 바깥여백 아래쪽 */
+    margin-bottom: 35px;
+    /* 안쪽 여백(축약형) : 상 우 하 좌(시계방향) */
+    padding: 30px 20px 30px 20px;
+}
+
+form{
+    /* 세로 안에 컨텐츠 내용물 만큼 자동 증가(자식요소만큼 자동증가) */
+    height: auto;
+    /* 안쪽 여백 - 왼쪽 */
+    padding-left: 10px;
+    /* TODO: 중앙 정렬 (div등) */
+    /* 바깥여백 : (상/하) (좌/우) */
+    /* 사용법 : margin 숫자px auto */
+    
+}
+.field{
+     /* 가로 */
+     width: 60px;
+     /* 바깥여백 */
+     /* margin(축약식2): (상/하) (좌/우) */
+     margin-right:  15px; 
+     /* 가로 배치 */
+     display: inline-block;
+     /* 글자 크기 */
+     font-size: 0.9em;
+     /* 굵은 글씨 */
+     font-weight: bold;
+     /* 글자 오른쪽 정렬 */
+     text-align: right;
+}
+.input-box{
+    /* 가로배치 */
+    display: inline-block;
+    /* 가로 */
+    width: 350px;
+    /* 세로 */
+    height: 35px;
+    /* 안쪽여백 */
+    padding: 5px;
+    /* 바깥여백(축약식2): 상/하 좌/우 */
+    margin: 10px 0;
+}
+
+button{
+    
+    /* 가로 */
+    width: 250px;
+    /* 세로 */
+    height: 50px;
+    /* 외각선 */
+    border: 1px solid #aaaaaa;
+    /* 배경색 */
+    background-color: #e9e9e9;
+    /* 글자크기 */
+    font-size: 0.9em;
+    margin-right: 10px;
+}
+
+#buttons > li{
+    /* 세로 -> 가로 배치 */
+    display: inline-block;
+}

@@ -1,0 +1,29 @@
+/* 디자인 공식 */
+/* 컨텐츠크기(순수한 이미지, 글자 등) */
+/* 전체 가로 크기 - 컨텐츠 가로 크기 + 2*padding + 2*margin */
+/* 전체 세로 크기 - 컨텐츠 세로 크기 + 2*padding + 2*margin */
+/* 예) 전체 body 가로 크기 : 700px */
+/* 700 = 컨텐츠가로크기 + 2*padding + 2*margin  */
+
+/* 여백 초기화 */
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  /* 배경 이미지:url("이미지 경로") */
+  background-image: url("../image/back3.png");
+}
+#shop {
+  /* 간단한 위치 이동 : 마진 활용 */
+  /* 바깥여백 - 위쪽 */
+  margin-top: 50px;
+  /* 바깥여백 - 왼쪽 */
+  margin-left: 30px;
+}
+#button {
+  /* 바깥여백 - 위쪽 */
+  margin-top: 30px;
+  /* 바깥여백 왼쪽 */
+  margin-left: 190px;
+}

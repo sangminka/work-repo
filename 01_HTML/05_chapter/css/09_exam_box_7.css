@@ -1,0 +1,23 @@
+h3 {
+  margin: 20px 0 0 20px;
+}
+
+ul {
+  border: 1px solid black;
+  width: 450px;
+  /* 축약형 padding: 상 우 하 좌 */
+  padding: 20px 30px 30px 30px;
+  /* 축약형 margin: 상 우 하 좌 */
+  margin: 20px 0 0 20px;
+}
+li {
+  /* 외각선 (점선) */
+  /* border-bottom: 선두깨 선스타일(점선) 색상 */
+  border-bottom: 1px dotted gray;
+  /* 목록 앞 점 없애기 */
+  list-style-type: none;
+  /* 축약형 padding: 상 우 하 좌 */
+  padding: 10px 0 10px 0;
+  
+}
+
