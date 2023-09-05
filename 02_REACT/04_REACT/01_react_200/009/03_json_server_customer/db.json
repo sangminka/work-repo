@@ -1,0 +1,22 @@
+{
+  "customer": [
+    {
+      "id": 2,
+      "cname": "임꺽정",
+      "email": "lim@daum.net",
+      "phone": "010-1234-5678"
+    },
+    {
+      "id": 3,
+      "cname": "장길산",
+      "email": "jang@gmail.com",
+      "phone": "010-1234-5678"
+    },
+    {
+      "cname": "123ㄴ",
+      "email": "12",
+      "phone": "2",
+      "id": 4
+    }
+  ]
+}
