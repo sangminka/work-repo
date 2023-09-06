@@ -420,31 +420,182 @@
 //     }
 // }
 // console.log(sum + ": " +result)
-// TODO 
-// TODO
-// TODO
 // TODO: 1282
 // n이 입력되면 k를 빼서 제곱수를 만들 수 있는 k를 구하고,
 // 그 제곱수에 루트를 씌운 수(제곱근)t를 구하여라.
 // 이 때 k는 여러가지가 될 수 있는데 가장 작은 k를 출력한다.
 // TODO: 1282 정답
-let n = Number(prompt("숫자 입력하시오"))
-// 빼주는 값
-let k =0;// 빼주는 값
-let t =1;//제곱근
-let a = 0
-// 힌트 : Math.sqrt(값)
-// let numbers = [1,2,3,4,5];
-// let result= numbers.map(Math.sqrt)
-let bool = true
-while(k < n && bool){
-    k++
-    a= n-k
-    console.log(a)
-    if(Math.sqrt(a) % 1 === 0 ){
-        bool = false
-        //a.sqrt 값이 정수일 경우
-    }
-}
+// let n = Number(prompt("숫자 입력하시오"))
+// // 빼주는 값
+// let k =0;// 빼주는 값
+// let t =1;//제곱근
+// let a = 0
+// // 힌트 : Math.sqrt(값)
+// // let numbers = [1,2,3,4,5];
+// // let result= numbers.map(Math.sqrt)
+// let bool = true
+// while(k < n && bool){
+//     k++
+//     a= n-k
+//     if(Math.sqrt(a) % 1 === 0 ){
 
-console.log(k)
+//         bool = false
+//         //a.sqrt 값이 정수일 경우
+//     }
+// }
+// console.log(k,Math.sqrt(a))
+// TODO: 1283
+// gbs라는 개미 투자자가 주식에 투자하려고 합니다.
+// 이 사람이 투자한 돈의 액수와, 그 주식의 하루간의 변동을 퍼센트로 알 때, 이 사람의 순수익과 이득/손해 판단을 출력하세요.
+// let c = Math.floor(Math.random()*(200-0)+1)-100 -100 ~ 100 랜덤 변수
+
+// TODO: 1283 정답
+// let a = Number(prompt("투자 금액을 입력하세요 100 ~ 10000"))
+// let b = Number(prompt("투자 날짜를 입력하세요 1 ~ 10"))
+// let money = a // 원금
+// for(let i = 1 ; i <= b; i++){
+//     let c = Number(prompt("등락폭 입력"))
+//     a = a + ((a * c)/100)
+//     console.log(i + "일차" + "이자율" + c + "금액" + a)
+// }
+// a = Math.round(a)
+// money =  a - money
+// if(money > 0){
+//     console.log(money)
+//     console.log("good")
+
+// }else if(money === 0){
+//     console.log(money)
+//     console.log("same")
+// }else{
+//     console.log(money)
+//     console.log("bad")
+
+// }
+// TODO: 1284
+// 두 소수의 곱을 암호로 사용하는 알고리즘은 큰 수의 소인수분해가 어렵기 때문에 안전하다고 알려져있다.
+// 그렇지만, 만약 두 소수를 잊어버리면 어떻게 될까? 굉장히 난감할 것이다.
+// 이에 대비해 어떤 수(n)가 입력되면 두 소수의 곱으로 나타낼 수 있으면 두 소수를 오름차순으로 출력하고,
+// 그렇지 않으면 "wrong number"를 출력하는 프로그램을 작성하시오
+// TODO: 1284 정답
+// let n = Number(prompt("수를 입력하세요"));
+// let arr = new Array(0); // 약수 저장 배열
+// let bool = true
+// for (let i = 1; i <= Math.sqrt(n); i++) {
+//   //약수일때 실행
+//   if (n % i === 0) {
+//     // 약수 저장
+//     arr.push(i);
+//     arr.push(n / i);
+//   }
+// }
+
+// for (let i = 0; i <= arr.length - 2; i++) {
+//   let count1 = 0; //약수 개수 구하기
+//   let count2 = 0; //약수 개수 구하기
+//   // 약수 소수 판별
+//   for (let j = 1; j <= Math.sqrt(arr[i]); j++) {
+//     if (arr[i] % j === 0) {
+//       count1 = count1 + 2;
+//     }
+//   }
+
+//   if (count1 === 2) {
+//     for (let k = 1; k <= Math.sqrt(arr[i + 1]); k++) {
+//       if (arr[i + 1] % k === 0) {
+//         count2 = count2 + 2;
+//       }
+//     }
+//   }
+
+//   if (count1 === 2 && count2 === 2) {
+//     console.log(arr[i], arr[i + 1]);
+//     bool = false
+//     break;
+
+//   }
+//   i++
+// }
+// if(bool){
+//     console.log("소수 곱 아님")
+// }
+// TODO: 1286
+// 5개의 정수들의 최댓값과 최솟값을 구하는 프로그램을 작성하라.
+// TODO: 1286 정답
+// let arr = new Array(5)
+// let b = null
+// for(let i = 0; i < arr.length; i++){
+//     let input = Number(prompt("숫자 입력"))
+//     arr[i] = input
+// }
+// let max = Math.max(arr[0],arr[1],arr[2],arr[3],arr[4])
+// let min = Math.min(arr[0],arr[1],arr[2],arr[3],arr[4])
+// console.log(max,min)
+// TODO: 1294 ~ 1295, 1675
+// TODO: 1294
+// ※ 씨저의 암호 원리는 앞의 문제를 참고하세요.
+// 대현이는 씨저의 암호 방식을 이용하여 문장을 만들려고 한다.
+// never trust brutus 를 씨저의 암호로 바꾸면 qhyhu wuxvw euxwxv 이다.
+// 그런데 집중력이 약한 대현이는 하나 하나 찾아서 암호로 바꾸는데 어려움을 겪고 있다.
+// 우리가 대현이를 위해 평문을 씨저의 암호문으로 바꾸는 프로그램을 만들어주자.
+// TODO: 1294 정답
+// let input = prompt("문자를 입력하세요");
+// let ceasar = String(input)
+// let ceasarNum = new Array(ceasar.length)
+// let output = ""
+// for(let i = 0; i < ceasar.length; i++){
+//     ceasarNum[i] = (ceasar[i]).charCodeAt()
+//     if(ceasarNum[i]  >= 100){
+//         ceasarNum[i] = ceasarNum[i] -3
+//     }else if(ceasarNum[i] === 99){
+//         ceasarNum[i] = 122;
+//     }else if(ceasarNum[i] === 98){
+//         ceasarNum[i] = 121;
+//     }else if(ceasarNum[i] === 97){
+//         ceasarNum[i] = 120;
+//     }
+//     let input3 = String.fromCharCode(ceasarNum[i]);
+//     output = output + input3 + ""
+// }
+//     console.log(output)
+// TODO: 1295
+// 주어지는 문장의 대문자를 소문자로, 소문자를 대문자로 변경하는 프로그램을 작성하라.
+// TODO: 1295 정답
+// let input = prompt("문자를 입력하세요");
+// let inputArr = String(input)
+// let output = ""
+// for(let i = 0; i < inputArr.length; i++){
+//     if (inputArr[i] === inputArr[i].toUpperCase()){
+//         output = output + inputArr[i].toLowerCase()
+//     }else{
+//         output = output + inputArr[i].toUpperCase()
+//     }
+// }
+// console.log(output)
+
+// TODO: 1675
+// 암호학에서 시저 암호(Caesar cipher)는 가장 오래된 암호 중 하나이고, 가장 대표적인 대치(substitution) 암호로서 평문 문자를 다른 문자로 일대일 대응시켜 암호문을 만들어 낸다.
+// 시저 암호는 알파벳을 3글자씩 밀려서 쓰면서 문장을 만들었다. 실제 시저는 부하인 브루투스에게 암살되기 전에 키케로에게 다음과 같은 암호문을 보냈다고 한다.
+// TODO: 1675
+// let bool = true;
+// let output = "";
+// let inputNum = 0;
+// while (bool) {
+//   let input = prompt("문자를 입력하세요");
+//   let ceasar = String(input)
+//   inputNum = ceasar.charCodeAt();
+//   if (inputNum >= 100) {
+//     inputNum = inputNum - 3;
+//   } else if (inputNum === 99) {
+//     inputNum = 122;
+//   } else if (inputNum === 98) {
+//     inputNum = 121;
+//   } else if (inputNum === 97) {
+//     inputNum = 120;
+//   } else {
+//     bool = false;
+//   }
+//   let input2 = String.fromCharCode(inputNum);
+//   output = output + input2 + "";
+// }
+// console.log(output);
