@@ -1,4 +1,22 @@
 *{
-    width: 1140;
+   padding: 0;
+   margin: 0;
+}
+.main{
+    width: 1140px;
+    margin: 0 auto;
+    background-color: burlywood;
+}
+.mainTitle{
+    /* margin-top: 30px; */
+    margin-left: 20px;
+    text-align: left;
+}
+.mainForm{
     border: 1px solid black;
+    margin-top: 20px;
+    margin-left: 20px;
+    display: inline-block;
+    text-align: left;
+    width: 1120px;
 }
