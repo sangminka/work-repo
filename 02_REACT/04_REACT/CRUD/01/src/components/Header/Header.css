@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Diphylleia&family=Moirai+One&family=Nanum+Pen+Script&display=swap');
+/*  전체 공백 초기화 */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* 웹사이트  */
+/* 사이트 명 */
+#name h1{
+    font-family: 'Moirai One', cursive;
+    font-size: 30px;
+}
+#name{
+    margin: 30px;
+    float: left;
+}
+/* 사이트명 끝 */
+
+/* 윗 메뉴 */
+.topMenubar{
+    border: 1px solid blue;
+}
+.topMenu{
+    border: 1px solid red;
+    text-decoration: none;
+    float: right;
+    margin-top: 72px;
+    margin-right: 20px;
+    /* margin: 20px; */
+    color: black;
+}
+
+/* 윗 메뉴 끝 */
+
+/* 네비게이션 바 */
+.nav{
+    display: inline-block;
+    width: 100%;
+    background-color: black;
+    padding: 15px 0px;
+}
+
+/* 메뉴 링크 */
+.navManu{
+    color: blue;
+    margin: 8px;
+    text-decoration: none;
+    float: left;
+}
+/* 검색창 */
+.searchbar{
+    float: right;
+    margin-top: 6px;
+
+}
+
+
+/* 네비게이션 바 끝 */

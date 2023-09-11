@@ -1,13 +1,56 @@
 // Header.js // (공통 컴포넌트)
 import React from "react";
 import { Link } from 'react-router-dom';
+import './Header.css'
 
 
 function Header() {
+
   return (
     
     <div>
-      <nav className="navbar navbar-expand-lg bg-light">
+
+      {/* 사이트 명 시작 */}
+      <div id="name">
+        <h1>웹사이트 명</h1>
+      </div>
+      {/* 사이트명 끝 */}
+      {/*  윗메뉴 시작*/}
+      <div className="topMenubar">
+        <Link className="topMenu">로그인</Link>
+        <Link className="topMenu">회원가입</Link>
+      </div>
+      {/* 윗메뉴 끝 */}
+      {/* 네비게이션 바 시작 */}
+      <div className="nav">
+        <Link className="navManu">메인 메뉴 1</Link>
+        <Link className="navManu">메인 메뉴 2</Link>
+        <Link className="navManu">메인 메뉴 3</Link>
+
+        <div className="searchbar">
+          {/* 검색어 입력창 시작 */}
+          <input type = "text"/>
+          {/* 검색어 입력창 끝 */}
+          <button>Search</button>
+        </div>
+        
+        
+      </div>
+      {/* 네비게이션 바 긑 */}
+     </div>
+  );
+}
+
+export default Header;  
+      
+      
+      
+
+
+
+      
+      
+      {/* <nav className="navbar navbar-expand-lg bg-light">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
             Navbar
@@ -83,9 +126,5 @@ function Header() {
             </form>
           </div>
         </div>
-      </nav>
-    </div>
-  );
-}
-
-export default Header;
+      </nav> */}
+   

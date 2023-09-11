@@ -18,27 +18,27 @@ function App() {
     <div className="App">
       {/* 메뉴 컴포넌트 : Header */}
       <Header/>
-      {/* 본문: 라우팅 설정 */}
-      {/* <div className = "container mt-3"> */}
-        {/* <Routes> */}
+      본문: 라우팅 설정
+      <div className = "container mt-3">
+        <Routes>
           {/* 1st 페이지 : / */}
-          {/* <Route path='/' element = {<Home/>}/> */}
+          <Route path='/' element = {<Home/>}/>
           {/* " * " : 지정되지 않은 모든 url*/}
-          {/* <Route path='*' element = {<Notfound/>}/> */}
+          <Route path='*' element = {<Notfound/>}/>
 
           {/* 부서 메뉴 */}
-          {/* <Route path='/dept' element = {<DeptList />}/> */}
-          {/* <Route path='/add-dept' element = {<AddDept />}/> */}
-          {/* <Route path='/dept/:id' element = {<Dept />}/> */}
+          <Route path='/dept' element = {<DeptList />}/>
+          <Route path='/add-dept' element = {<AddDept />}/>
+          <Route path='/dept/:id' element = {<Dept />}/>
 
           {/* 연습) 사원 메뉴 */}
-          {/* <Route path='/emp' element = {<EmpList/>}/> */}
-          {/* <Route path='/add-emp' element = {<AddEmp/>}/> */}
-          {/* <Route path='/emp/:id' element = {<Emp />}/>   */}
+          <Route path='/emp' element = {<EmpList/>}/>
+          <Route path='/add-emp' element = {<AddEmp/>}/>
+          <Route path='/emp/:id' element = {<Emp />}/>  
 
-        {/* </Routes> */}
+        </Routes>
 
-      {/* </div> */}
+      </div>
     </div>
   );
 }
