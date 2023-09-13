@@ -20,6 +20,7 @@ function App() {
       <Header/>
       본문: 라우팅 설정
       <div className = "container mt-3">
+        
         <Routes>
           {/* 1st 페이지 : / */}
           <Route path='/' element = {<Home/>}/>

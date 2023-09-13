@@ -1,27 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Diphylleia&family=Moirai+One&family=Nanum+Pen+Script&display=swap');
-/*  전체 공백 초기화 */
-*{
-    margin: 0;
-    padding: 0;
+
+/* Header.css */
+#header {
+    width: 100%;
 }
 
-/* 웹사이트  */
 /* 사이트 명 */
 #name h1{
     font-family: 'Moirai One', cursive;
     font-size: 30px;
 }
-#name{
+
+/* 사이트 제목 */
+#name {
     margin: 30px;
     float: left;
 }
-/* 사이트명 끝 */
 
 /* 윗 메뉴 */
-.topMenubar{
-    border: 1px solid blue;
-}
-.topMenu{
+.topMenubar > .topMenu{
     border: 1px solid red;
     text-decoration: none;
     float: right;
@@ -31,29 +28,51 @@
     color: black;
 }
 
-/* 윗 메뉴 끝 */
+/* float 영향 지우기  */
+.clearfix {
+    clear: both;
+}
 
-/* 네비게이션 바 */
-.nav{
-    display: inline-block;
-    width: 100%;
+#nav {
     background-color: black;
-    padding: 15px 0px;
+    width: 100%;
+    height: 70px;
 }
 
-/* 메뉴 링크 */
-.navManu{
-    color: blue;
-    margin: 8px;
-    text-decoration: none;
+/* 왼쪽 메뉴 */
+.menu {
     float: left;
+    /* background-color: aqua; */
 }
-/* 검색창 */
-.searchbar{
+
+/* 목록 태그(li) */
+.menu > .navManu {
+    display: inline-block;
+    margin-left: 20px;
+}
+/* 메뉴 링크 */
+.menu > .navManu > .link {
+    color: blue;
+    text-decoration: none;
+    line-height: 70px;
+}
+
+/* 오른쪽 검색창 */
+.search {
     float: right;
-    margin-top: 6px;
-
+    /* line-height: 70px; */
+    padding-right: 10px;
+    padding-top: 20px;
 }
 
+/* 오른쪽 검색창 입력양식 */
+.search > input {
+    height: 25px;
+    width: 180px;
+}
+/* 오른쪽 검색창 버튼 */
+.search > button {
+    height: 30px;
+    
 
-/* 네비게이션 바 끝 */
+}

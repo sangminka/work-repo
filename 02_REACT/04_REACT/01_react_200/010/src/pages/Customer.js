@@ -1,49 +1,32 @@
-// DeptList.js : dept 조회 페이지
-// rfce
-import React from "react";
-import { useState } from "react";
-// axios 공통 함수 파일 import
-import DeptService from "../../services/DeptService";
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import CustomerService from "../service/CustomerService";
 import { Link } from "react-router-dom";
 
-function DeptList() {
-  // TODO 변수 정의 : 줄복사 단축키(ctrl + d),자동 정렬(ctrl + alt + l)
-  let [dept, setDept] = useState(); //백엔드 부서 데이터를(객체배열) 받은 변수
-  let [searchDname, setSearchDname] = useState(""); // 검색어 변수
-
+function Customer() {
+  // TODO 변수정의
+  let [customer, setCustomer] = useState();
+  let [searchCname, setSearchCname] = useState("");
   // TODO 함수 정의
-  // nfn 화살표 단축키
-  // 백엔드 데이터 조회 함수 : axios
-  const retrieveDept = () => {
-    // axios 함수 : get 요청 : (js 공통 함수를 만들고 공통함수명으로 호출)
-    // .then() : 성공(자동실행)
-    // .catch() : 실패(자동실행)
-    DeptService.getAll() // 백엔드 요청
+  const retrieveCustomer = () => {
+    CustomerService.gatall()
       .then((response) => {
-        // 성공시 자동실행
-        setDept(response.data); //실질적인 벡엔드 데이터 저장(response.data)
-        // 로그 찍기
+        setCustomer(response.data);
         console.log(response.data);
       })
       .catch((e) => {
-        // 실패시 자동실행
-        console.log(e); // 에러메시지 콘솔로 출력
+        console.log(e);
       });
   };
-  //  화면에 뜰때 retrueveDept 실행
-  // useEffect(()=>{}, [])
+
   useEffect(() => {
-    retrieveDept(); // 함수의 사용
+    retrieveCustomer();
   }, []);
-  // 검색어 조회 함수 : findByDname()
-  // nfn
-  // axios get(url) : 공통함수 DeptService.findByDname(검색어)
-  const findByDname = () => {
-    DeptService.findByDname(searchDname) // 검색어로 조회 요청
+
+  const findByCname = () => {
+    CustomerService.findByCname(searchCname) // 검색어로 조회 요청
       .then((response) => {
         // 성공하면 자동실행
-        setDept(response.data); // 백엔드에서 전달해준 데이터를 저장 (response.data)
+        setCustomer(response.data); // 백엔드에서 전달해준 데이터를 저장 (response.data)
         //로그 찍기
         console.log(response.data); //벡엔드데이터(response.data)
       })
@@ -52,22 +35,19 @@ function DeptList() {
         console.log(e); //에러메세지 출력 콘솔
       });
   };
-  // 검색어 입력 양식 : onChange = (함수명)
-  // 역바인딩 함수 : 코딩
-  // nfn
-  const onChangeSearchDname = (event) => {
-    setSearchDname(event.target.value);
+
+  const onChangeSearchCname = (event) => {
+    setSearchCname(event.target.value);
   };
   return (
     <div>
       <div className="row">
         {/* 제목 시작 */}
         <div className="col-md-12 mb-5 mt-5">
-          <h1>Dept List</h1>
+          <h1>Customer List</h1>
         </div>
         {/* 제목 끝 */}
       </div>
-
 
       {/* 검색창 시작 */}
       <div className="row mb-5 justify-content-center">
@@ -77,9 +57,9 @@ function DeptList() {
           <input
             type="text"
             className="form-control"
-            placeholder="Search by dname"
-            value={searchDname}
-            onChange={onChangeSearchDname}
+            placeholder="Search by cname"
+            value={searchCname}
+            onChange={onChangeSearchCname}
           />
           {/* 검챗어 입력창 끝 */}
 
@@ -88,17 +68,14 @@ function DeptList() {
             <button
               className="btn btn-outline-secondary"
               type="button"
-              onClick={findByDname}
+              onClick={findByCname}
             >
               Search
             </button>
           </div>
-          {/* 검색 버튼 끝 */}
+          {/* 검색 버튼 끝 */}  
         </div>
       </div>
-      {/* 검색창 끝 */}
-
-
 
       {/* 테이블 시작 */}
       <div className="col-md-12">
@@ -107,7 +84,7 @@ function DeptList() {
           {/* 테이블 제목 시작 */}
           <thead className="table-light">
             <tr>
-              <th scope="col">Dname</th>
+              <th scope="col">Cname</th>
               <th scope="col">Loc</th>
               <th scope="col">Actions</th>
             </tr>
@@ -116,17 +93,17 @@ function DeptList() {
 
           <tbody>
             {/* 반복문 시작 */}
-            {dept &&
-              dept.map((data, index) => (
+            {customer &&
+              customer.map((data, index) => (
                 <tr key={index}>
-                  <td>{data.dname}</td>
+                  <td>{data.cname}</td>
                   <td>{data.loc}</td>
                   <td>
                     {/* 1)사용법 : /url?변수명=변수값 (쿼리스트링 방식)  */}
                     {/* 2)사용법 : /url/변수값        (파라메터 방식)
                     -> 다른페이지에서 값을 받을수 있음 */}
                     {/* 클릭하면 상세페이지(컴포넌트)가 화면에 뜸(부서번호도 넘겨줌) */}
-                    <Link to={"/dept/" + data.id}>
+                    <Link to={"/customer/" + data.id}>
                       <span className="badge bg-success">Edit</span>
                     </Link>
                   </td>
@@ -142,4 +119,4 @@ function DeptList() {
   );
 }
 
-export default DeptList;
+export default Customer;

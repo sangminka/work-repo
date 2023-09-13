@@ -1,22 +1,42 @@
-*{
-   padding: 0;
-   margin: 0;
+.Main{
+    margin-top: -16px;
 }
 .main{
     width: 1140px;
     margin: 0 auto;
-    background-color: burlywood;
+    /* background-color: burlywood; */
+    height: 750px;
 }
+
+/* 게시판 제목 */
 .mainTitle{
     /* margin-top: 30px; */
-    margin-left: 20px;
+    /* margin-left: 20px; */
     text-align: left;
 }
+.mainTitle h1{
+    padding-top:  30px;
+    padding-left: 20px;
+
+}
+/* 글목록  */
 .mainForm{
-    border: 1px solid black;
     margin-top: 20px;
-    margin-left: 20px;
+    
     display: inline-block;
     text-align: left;
     width: 1120px;
+
 }
+
+/* 글쓰기 버튼 시작 */
+.main_writeDiv{
+    width: 1140px;
+    margin: 10px auto;
+}
+.main_writeButton{
+
+    /* margin-top: 10px; */
+    float: right;
+}
+/* 글쓰기 버튼 끝 */
