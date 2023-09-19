@@ -9,13 +9,18 @@ li{
             속성:값
         }
 */
-li:nth-child(2n){
+/* li:nth-child(2n){ */
     /* 10진수 : 1 ~ 9까지 ,16진수 1 ~ 15까지, 8진수 : 1 ~ 7까지, 2진수 : 0,1*/
     /* 16진수 10(a), 11(b), 12(c), 13(d), 14(e), 15(f) */
     /* 색깔 지정 : red, (#16진수 6자리, 색상표 표기) */
-    background-color:#ff0003 ;
-}
+ 
+    /* background-color:#ff0003 ; */
+/* } */
 
-li:nth-child(2n + 1){
+/* li:nth-child(2n + 1){ */
+    /* background-color: #800000; */
+/* } */
+
+li:first-child{
     background-color: #800000;
 }
