@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 /**
@@ -14,21 +15,13 @@ import java.util.Scanner;
  * 2023-09-19         GGG          최초 생성
  */
 public class SolutionApplication {
+
     public static void main(String[] args) {
-        /**
-         * 문자열 출력하기
-         * 입력 : HelloWorld!
-         * 출력 : HelloWorld!
-         */
-//        Scanner sc = new Scanner(System.in);
-//        String a = sc.next();
-//        System.out.println(a);
-
-        Soluton soluton = new Soluton();
-        String[] arg = {"a","b","c"};
-        System.out.println(soluton.solution(arg));
+        Solution solution = new Solution();
+        solution.solution(0,1,2,3,4);
     }
-
-
 }
+
+
+
 
