@@ -18,7 +18,9 @@ public class SolutionApplication {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        solution.solution(0,1,2,3,4);
+
+//        solution.solution("aAb1B2cC34oOp");
+
     }
 }
 
