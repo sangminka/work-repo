@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f742f700-65ee-4f81-b02e-da17b8a6763c" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../../../../06_Backend/00_HelloWorld/helloworld/src/main/java/com/example/helloworld/config/WebMvcConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../06_Backend/04_JPAExam/JPACustomExam/src/main/resources/data.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../06_Backend/04_JPAExam/JPACustomExam/src/main/resources/log4jdbc.log4j2.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../06_Backend/04_JPAExam/JPACustomExam/src/main/resources/logback-spring.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../06_Backend/04_JPAExam/JPACustomExam/src/main/resources/schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../../01_HTML/02_chapter_html/03_text_font.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../../01_HTML/02_chapter_html/03_text_font.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../../01_HTML/02_chapter_html/08_video_basic.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../../01_HTML/02_chapter_html/08_video_basic.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../../01_HTML/03_chapter_html/08_form_textarea.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../../01_HTML/03_chapter_html/08_form_textarea.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../../01_HTML/03_chapter_html/19_space_semantic.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../../01_HTML/03_chapter_html/19_space_semantic.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../../01_HTML/04_chapter_css/css/19_etc_stucture.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../../01_HTML/04_chapter_css/css/19_etc_stucture.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../../codingtest/coding_input/js/javascript_100.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../../codingtest/coding_input/js/javascript_100.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../../codingtest/coding_input/js/javascript_for.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../../codingtest/coding_input/js/javascript_for.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2Xbo9e7v6H6SLH28d2SxxY6oYOq" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="디폴트 작업">
+      <changelist id="f742f700-65ee-4f81-b02e-da17b8a6763c" name="변경" comment="" />
+      <created>1698906993104</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1698906993104</updated>
+      <workItem from="1698906994986" duration="12000" />
+    </task>
+    <servers />
+  </component>
+</project>
