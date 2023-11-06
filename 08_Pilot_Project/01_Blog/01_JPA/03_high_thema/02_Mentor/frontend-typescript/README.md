@@ -42,6 +42,7 @@ import Typed from "typed.js";
 # 8) PureCounter npm
 # 공홈 : https://github.com/srexi/purecounterjs
 npm i @srexi/purecounterjs
+npm install @srexi/purecounterjs
 
 # 8-1) PureCounter import : main.js
 import PureCounter from "@srexi/purecounterjs";

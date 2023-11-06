@@ -5,15 +5,13 @@
  * Author: BootstrapMade.com
  * License: https://bootstrapmade.com/license/
  */
-// todo: swiper import
-import Swiper from "swiper";
-// todo: aos import
-import AOS from "aos";
-// todo: @srexi/purecounterjs import
-import PureCounter from "@srexi/purecounterjs"
-
+import Swiper from 'swiper/bundle';
+import 'swiper/swiper-bundle.css'; // CSS 파일을 가져옵니다.
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import PureCounter from '@srexi/purecounterjs';
 /* eslint-disable */
-export default function initMain() {
+export default function initMain1() {
   // 여기
   (function () {
     "use strict";
