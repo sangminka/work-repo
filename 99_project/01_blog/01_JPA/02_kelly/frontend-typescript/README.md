@@ -24,3 +24,19 @@ npm i @types/swiper
 # 공홈 : https://github.com/srexi/purecounterjs
 npm i @srexi/purecounterjs
 npm install @srexi/purecounterjs
+
+# isotope
+npm install isotope-layout
+
+# glightbox
+npm install glightbox
+
+import GLightbox from 'glightbox';
+
+# waypoint
+npm install waypoint
+
+
+
+
+

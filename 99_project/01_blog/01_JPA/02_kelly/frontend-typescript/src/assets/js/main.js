@@ -5,10 +5,17 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+import Swiper from 'swiper/bundle';
+import 'swiper/swiper-bundle.css'; // CSS 파일을 가져옵니다.
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import PureCounter from '@srexi/purecounterjs';
+import Isotope from 'isotope-layout';
+import GLightbox from 'glightbox';
+// import Waypoint from 'waypoint';
 
+/* eslint-disable */
 export default function initMain(){
-
-
 (function() {
   "use strict";
 
@@ -40,6 +47,7 @@ export default function initMain(){
 
   /**
    * Easy on scroll event listener 
+   * HTML 요소에 스크롤 이벤트를 연결
    */
   const onscroll = (el, listener) => {
     el.addEventListener('scroll', listener)
@@ -61,6 +69,8 @@ export default function initMain(){
 
   /**
    * Back to top button
+   * 스크롤시 화면 위로 올라가는 버튼 생성
+   * 오류
    */
   let backtotop = select('.back-to-top')
   if (backtotop) {
@@ -77,6 +87,7 @@ export default function initMain(){
 
   /**
    * Mobile nav toggle
+   * 화면이 작아지면 햄버거 버튼 표시
    */
   on('click', '.mobile-nav-toggle', function(e) {
     select('#navbar').classList.toggle('navbar-mobile')
@@ -125,6 +136,7 @@ export default function initMain(){
 
   /**
    * Preloader
+   * 웹 페이지의 로딩 프리로더를 제거
    */
   let preloader = select('#preloader');
   if (preloader) {
@@ -135,6 +147,7 @@ export default function initMain(){
 
   /**
    * Porfolio isotope and filter
+   * 포트폴리오 필터 및 정렬을 처리
    */
   window.addEventListener('load', () => {
     let portfolioContainer = select('.portfolio-container');
@@ -165,6 +178,7 @@ export default function initMain(){
 
   /**
    * Initiate portfolio lightbox 
+   *  포트폴리오 항목에 대한 라이트박스(모달 창) 기능을 초기화
    */
   const portfolioLightbox = GLightbox({
     selector: '.portfolio-lightbox'
@@ -172,6 +186,7 @@ export default function initMain(){
 
   /**
    * Initiate portfolio details lightbox 
+   * 포트폴리오 세부 정보에 대한 라이트박스(모달 창) 기능을 초기화
    */
   const portfolioDetailsLightbox = GLightbox({
     selector: '.portfolio-details-lightbox',
@@ -181,6 +196,7 @@ export default function initMain(){
 
   /**
    * Portfolio details slider
+   * Swiper 라이브러리를 사용하여 포트폴리오 세부 정보 슬라이더를 초기화
    */
   new Swiper('.portfolio-details-slider', {
     speed: 400,
@@ -198,12 +214,14 @@ export default function initMain(){
 
   /**
    * Skills animation
+   * 웹 페이지의 기술 스킬 섹션에서 스킬 진행률 바를 애니메이션 효과
+   * 이상 있음 
    */
   let skilsContent = select('.skills-content');
   if (skilsContent) {
     new Waypoint({
       element: skilsContent,
-      offset: '80%',
+      offset: '70%',
       handler: function(direction) {
         let progress = select('.progress .progress-bar', true);
         progress.forEach((el) => {
@@ -215,6 +233,7 @@ export default function initMain(){
 
   /**
    * Testimonials slider
+   * about 아래 사진 돌리기
    */
   new Swiper('.testimonials-slider', {
     speed: 600,
@@ -233,6 +252,7 @@ export default function initMain(){
 
   /**
    * Animation on scroll
+   * AOS 사용 관련
    */
   window.addEventListener('load', () => {
     AOS.init({
@@ -245,6 +265,7 @@ export default function initMain(){
 
   /**
    * Initiate Pure Counter 
+   * 숫자 카운드 about부분 숫자 올라가는 부분
    */
   new PureCounter();
 
