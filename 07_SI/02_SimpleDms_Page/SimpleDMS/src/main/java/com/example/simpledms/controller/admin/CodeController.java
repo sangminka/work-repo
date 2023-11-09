@@ -3,6 +3,7 @@ package com.example.simpledms.controller.admin;
 import com.example.simpledms.model.dto.admin.CodeDto;
 import com.example.simpledms.model.entity.admin.Code;
 import com.example.simpledms.model.entity.admin.CodeCategory;
+import com.example.simpledms.model.entity.basic.Dept;
 import com.example.simpledms.service.admin.CodeService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 /**
  * packageName : com.example.simpledms.controller.admin
@@ -85,4 +87,39 @@ public class CodeController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+    //   수정 함수
+    @PutMapping("/code/{codeId}")
+    public ResponseEntity<Object> update(@PathVariable int codeId, @RequestBody Code code) {
+
+        try {
+            Code code2 = codeService.save(code);
+
+            return new ResponseEntity<>(code2, HttpStatus.OK);
+        } catch (Exception e) {
+//            DB 에러가 났을경우 : INTERNAL_SERVER_ERROR 프론트엔드로 전송
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    // 상세 조회
+    @GetMapping("/code/{codeId}")
+    public ResponseEntity<Object> findById(@PathVariable int codeId) {
+
+        try {
+            Optional<Code> optionalDept = codeService.findById(codeId);
+
+            if (optionalDept.isPresent()) {
+//                성공
+                return new ResponseEntity<>(optionalDept.get(), HttpStatus.OK);
+            } else {
+//                데이터 없음
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            }
+        } catch (Exception e) {
+//            서버 에러
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
 }
