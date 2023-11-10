@@ -25,19 +25,18 @@ function About() {
                   <div className="col-lg-6">
                     <ul>
                       <li>
-                        <img src="https://www.flaticon.com/kr/free-icons/" alt="생일축하아이콘"/>
-                      {/* <a href="https://www.flaticon.com/kr/free-icons/-" title="생일 축하 아이콘">생일 축하 아이콘  제작자: Freepik - Flaticon</a> */}
+                        {/* <img src="assets/img/icon/birthday.png" className="icon" alt="" /> */}
                         <i className="bi bi-rounded-right"></i>{" "}
-                        <strong>생년 월일</strong><br/> 1999/10/18
+                        <h4><strong>생년월일</strong>:  1999/10/18</h4>
                       </li>
                       {/* <li><i className="bi bi-rounded-right"></i> <strong>Website:</strong> www.example.com</li> */}
                       <li>
                         <i className="bi bi-rounded-right"></i>{" "}
-                        <strong>연락처:</strong> 010 7630 2058
+                        <h4><strong>연락처</strong>: 010 7630 2058</h4>
                       </li>
                       <li>
                         <i className="bi bi-rounded-right"></i>{" "}
-                        <strong>주소지:</strong> 경상남도 창원시 진해구
+                        <h4><strong>주소지</strong></h4>경상남도 창원시 진해구
                       </li>
                     </ul>
                   </div>
@@ -45,15 +44,15 @@ function About() {
                     <ul>
                       <li>
                         <i className="bi bi-rounded-right"></i>{" "}
-                        <strong>나이:</strong> 24
+                        <h4><strong>나이</strong></h4> 24
                       </li>
                       <li>
                         <i className="bi bi-rounded-right"></i>{" "}
-                        <strong>학력:</strong> 동서대학교
+                        <h4><strong>학력</strong></h4> 동서대학교
                       </li>
                       <li>
                         <i className="bi bi-rounded-right"></i>{" "}
-                        <strong>이메일:</strong> rkdtkdals3880@naver.com
+                        <h4><strong>이메일</strong></h4> rkdtkdals3880@naver.com
                       </li>
                       {/* <li><i className="bi bi-rounded-right"></i> <strong>Freelance:</strong> Available</li> */}
                     </ul>
