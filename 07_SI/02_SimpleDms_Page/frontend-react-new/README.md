@@ -18,6 +18,7 @@ import Pagination from '@mui/material/Pagination';
 # 5) typescript jquery, jqueryui type 넣기
 # 5-1) typescript jquery 사용
 npm i --save-dev @types/jquery
+npm i @types/jqueryui
 
  # 6) 공통코드 : 프로젝트 시작시 코드 체계를 정의하고 
  # 각각의 테이블에서 사용하는 목적으로 씀
@@ -29,3 +30,6 @@ npm i --save-dev @types/jquery
  #              배송 == 10003
  #              확정 == 10004
  # - 관리 개선 (공통 코드 적용) : 상품명(아우터) - 상태명(10002) 
+
+ # axios 설치
+ npm i axios

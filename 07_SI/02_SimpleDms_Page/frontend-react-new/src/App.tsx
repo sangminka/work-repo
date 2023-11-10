@@ -47,6 +47,10 @@ import SimpleProduct from "./pages/shop/simple-product/SimpleProduct";
 import Product from "./pages/shop/product/Product";
 import SimpleCart from "./pages/shop/simple-product/SimpleCart";
 import SimpleCartList from "./pages/shop/simple-product/SimpleCartList";
+import CinemaList from "./pages/shop/cinema/CinemaList";
+import Cinema from "./pages/shop/cinema/Cinema";
+import ThemaLoadList from "./pages/shop/thema-load/ThemaLoadList";
+import FileDbList from "./pages/advanced/FileDbList";
 
 function App() {
   return (
@@ -138,6 +142,19 @@ function App() {
           <Route path="/product" element={<ProductList />} />
           <Route path="/add-product" element={<AddProduct />} />
           <Route path="/product/:pno" element={<Product />} />
+
+          {/* cinema */}
+          <Route path="/cinema" element={<CinemaList />} />
+          <Route path="/cinema/:movieCd" element={<Cinema />} />
+
+          {/* 부산 테마길(busan thema load) */}
+          <Route path="/thema-load" element={<ThemaLoadList />} />
+
+          {/* 파일 업로드 */}
+          <Route path="/fileDb" element={<FileDbList />} />
+
+
+
 
           {/* NotFound */}
           <Route path="*" element={<NotFound />} />
