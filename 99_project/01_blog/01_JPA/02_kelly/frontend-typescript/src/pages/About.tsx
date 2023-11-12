@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import initMain from "../assets/js/main";
-
+//
 function About() {
   useEffect(() => {
     initMain();
@@ -19,24 +19,36 @@ function About() {
               <div className="col-lg-4">
                 <img src="assets/img/about.jpg" className="img-fluid" alt="" />
               </div>
+
               <div className="col-lg-8 pt-4 pt-lg-0 content">
-                <h3>Illustrator &amp; UI/UX Designer</h3>
+                <h3>웹 개발자 &amp; 프론트/백엔드 개발자</h3>
+                <p className="fst-italic">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+
                 <div className="row">
                   <div className="col-lg-6">
                     <ul>
                       <li>
                         {/* <img src="assets/img/icon/birthday.png" className="icon" alt="" /> */}
                         <i className="bi bi-rounded-right"></i>{" "}
-                        <h4><strong>생년월일</strong>:  1999/10/18</h4>
+                        <h4>
+                          <strong>생년월일</strong>: 1999/10/18
+                        </h4>
                       </li>
                       {/* <li><i className="bi bi-rounded-right"></i> <strong>Website:</strong> www.example.com</li> */}
                       <li>
                         <i className="bi bi-rounded-right"></i>{" "}
-                        <h4><strong>연락처</strong>: 010 7630 2058</h4>
+                        <h4>
+                          <strong>연락처</strong>: 010 7630 2058
+                        </h4>
                       </li>
                       <li>
                         <i className="bi bi-rounded-right"></i>{" "}
-                        <h4><strong>주소지</strong></h4>경상남도 창원시 진해구
+                        <h4>
+                          <strong>주소지</strong>: 경상남도 창원시 진해구
+                        </h4>
                       </li>
                     </ul>
                   </div>
@@ -44,15 +56,21 @@ function About() {
                     <ul>
                       <li>
                         <i className="bi bi-rounded-right"></i>{" "}
-                        <h4><strong>나이</strong></h4> 24
+                        <h4>
+                          <strong>나이</strong>: 24
+                        </h4>
                       </li>
                       <li>
                         <i className="bi bi-rounded-right"></i>{" "}
-                        <h4><strong>학력</strong></h4> 동서대학교
+                        <h4>
+                          <strong>학력</strong>: 동서대학교
+                        </h4>
                       </li>
                       <li>
                         <i className="bi bi-rounded-right"></i>{" "}
-                        <h4><strong>이메일</strong></h4> rkdtkdals3880@naver.com
+                        <h4>
+                          <strong>이메일</strong>: rkdtkdals3880@naver.com
+                        </h4>
                       </li>
                       {/* <li><i className="bi bi-rounded-right"></i> <strong>Freelance:</strong> Available</li> */}
                     </ul>
@@ -189,18 +207,12 @@ function About() {
           <div className="container" data-aos="fade-up">
             <div className="section-title">
               <h2>Resume</h2>
-              <p>
-                Magnam dolores commodi suscipit. Necessitatibus eius consequatur
-                ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam
-                quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.
-                Quia fugiat sit in iste officiis commodi quidem hic quas.
-              </p>
             </div>
 
             <div className="row">
               <div className="col-lg-6">
-                <h3 className="resume-title">Sumary</h3>
-                <div className="resume-item pb-0">
+                {/* <h3 className="resume-title">Sumary</h3> */}
+                {/* <div className="resume-item pb-0">
                   <h4>Alice Barkley</h4>
                   <p>
                     <em>
@@ -216,282 +228,107 @@ function About() {
                     <li>(123) 456-7891</li>
                     <li>alice.barkley@example.com</li>
                   </ul>
+                </div> */}
+
+                <h3 className="resume-title">교육</h3>
+                <div className="resume-item">
+                  <h4>동서대학교</h4>
+                  <h5>2018년</h5>
+                  <p>
+                    {/* <em>라인트레이서 모터 제어</em> */}
+                  </p>
+                  <p>
+                    라인트레이서 제작 및 프로그램밍을 통해 바퀴회전 모터 제어
+                  </p>
+                </div>
+                <div className="resume-item">
+                  {/* <h4>Bachelor of Fine Arts &amp; Graphic Design</h4> */}
+                  <h5>2019년</h5>
+                  <p>
+                    리눅스, c언어 기초 html, 자료구조 및 알고리즘 (스택,큐
+                    알고리즘)
+                  </p>
                 </div>
 
-                <h3 className="resume-title">Education</h3>
                 <div className="resume-item">
-                  <h4>Master of Fine Arts &amp; Graphic Design</h4>
-                  <h5>2015 - 2016</h5>
+                  {/* <h4>Bachelor of Fine Arts &amp; Graphic Design</h4> */}
+                  <h5>2021년</h5>
                   <p>
-                    <em>Rochester Institute of Technology, Rochester, NY</em>
-                  </p>
-                  <p>
-                    Qui deserunt veniam. Et sed aliquam labore tempore sed
-                    quisquam iusto autem sit. Ea vero voluptatum qui ut
-                    dignissimos deleniti nerada porti sand markend
+                    라즈베리파이 미세먼지 감지 센서 및 led 센서,Python프로그래밍
                   </p>
                 </div>
+
                 <div className="resume-item">
-                  <h4>Bachelor of Fine Arts &amp; Graphic Design</h4>
-                  <h5>2010 - 2014</h5>
+                  {/* <h4>Bachelor of Fine Arts &amp; Graphic Design</h4> */}
+                  <h5>2022년</h5>
                   <p>
-                    <em>Rochester Institute of Technology, Rochester, NY</em>
+                    인공지능 아이돌 영상편집 알고리즘 프로젝트,컴퓨터
+                    비전,웹서버 프로그래밍{" "}
                   </p>
+                </div>
+
+                <div className="resume-item">
+                  {/* <h4>Bachelor of Fine Arts &amp; Graphic Design</h4> */}
+                  <h5>2023</h5>
                   <p>
-                    Quia nobis sequi est occaecati aut. Repudiandae et iusto
-                    quae reiciendis et quis Eius vel ratione eius unde vitae
-                    rerum voluptates asperiores voluptatem Earum molestiae
-                    consequatur neque etlon sader mart dila
+                    소프트웨어 설계, 구현, 테스트 → 서비스개선 역량 함양 <br/>
+                    관계형데이터베이스 SQL : 응용 SW에 적합한 데이터를 정의 및
+                    조작, 제어 <br/> 자바(Java) : 객체지향 프로그래밍, 공통모듈
+                    구현, 웹 애플리케이션 개발 <br/> 애플리케이션 프레임워크 및 DB
+                    프레임워크 : 최적화, 네트워크기반 웹 애플리케이션 개발/배포
+                    <br/> 오픈 API :　공공데이터 오픈 API 활용법、웹/앱 서비스
+                    기획-설계-배포-테스트{" "}
                   </p>
                 </div>
               </div>
               <div className="col-lg-6">
-                <h3 className="resume-title">Professional Experience</h3>
+                <h3 className="resume-title">참여 프로젝트</h3>
+             
                 <div className="resume-item">
-                  <h4>Senior graphic design specialist</h4>
-                  <h5>2019 - Present</h5>
+                  {/* <h4>Senior graphic design specialist</h4> */}
+                  <h5>2021년</h5>
                   <p>
-                    <em>Experion, New York, NY </em>
+                    <em>미세먼지 측정 보조베터리 </em><br/>
+                    캡스톤 디자인- 라즈베리파이,미세먼지 감지센서를 이용한 미세먼지를 측정 할 수 있는 보조베터리 제작 
+
                   </p>
 
-                  <ul>
-                    <li>
-                      Lead in the design, development, and implementation of the
-                      graphic, layout, and production communication materials
-                    </li>
-                    <li>
-                      Delegate tasks to the 7 members of the design team and
-                      provide counsel on all aspects of the project.{" "}
-                    </li>
-                    <li>
-                      Supervise the assessment of all graphic materials in order
-                      to ensure quality and accuracy of the design
-                    </li>
-                    <li>
-                      Oversee the efficient use of production project budgets
-                      ranging from $2,000 - $25,000
-                    </li>
-                  </ul>
+                 
                 </div>
                 <div className="resume-item">
-                  <h4>Graphic design specialist</h4>
-                  <h5>2017 - 2018</h5>
+                  {/* <h4>Senior graphic design specialist</h4> */}
+                  <h5>2022년</h5>
                   <p>
-                    <em>Stepping Stone Advertising, New York, NY</em>
+                    <em>아이돌 영상 자동 편집 알고리즘 작성 </em><br/>
+                    캡스톤 디자인 -  FaceLandmark를 잡아주는 모델을 이용하여 얼굴의 좌표를 계산하여 다음 프레임에서 가장 가까운 영상으로 전환하는 방식
+
                   </p>
 
-                  <ul>
-                    <li>
-                      Developed numerous marketing programs (logos,
-                      brochures,infographics, presentations, and
-                      advertisements).
-                    </li>
-                    <li>
-                      Managed up to 5 projects or tasks at a given time while
-                      under pressure
-                    </li>
-                    <li>
-                      Recommended and consulted with clients on the most
-                      appropriate graphic design
-                    </li>
-                    <li>
-                      Created 4+ design presentations and proposals a month for
-                      clients and account managers
-                    </li>
-                  </ul>
+                 
                 </div>
+
+                <div className="resume-item">
+                  {/* <h4>Senior graphic design specialist</h4> */}
+                  <h5>2023년</h5>
+                  <p>
+                    <em> 웹페이지 제작 </em><br/>
+                    팀프로젝트로 쇼핑몰 웹페이지를 제작하였습니다.
+
+                  </p>
+
+                 
+                </div>
+                
+                
               </div>
             </div>
           </div>
         </section>
         {/* End Resume Section */}
 
-        {/* ======= Facts Section ======= */}
-        <section id="facts" className="facts">
-          <div className="container" data-aos="fade-up">
-            <div className="section-title">
-              <h2>Facts</h2>
-              <p>
-                Magnam dolores commodi suscipit. Necessitatibus eius consequatur
-                ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam
-                quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.
-                Quia fugiat sit in iste officiis commodi quidem hic quas.
-              </p>
-            </div>
+   
 
-            <div className="row counters">
-              <div className="col-lg-3 col-6 text-center">
-                <span
-                  data-purecounter-start="0"
-                  data-purecounter-end="232"
-                  data-purecounter-duration="1"
-                  className="purecounter"
-                ></span>
-                <p>Clients</p>
-              </div>
-
-              <div className="col-lg-3 col-6 text-center">
-                <span
-                  data-purecounter-start="0"
-                  data-purecounter-end="521"
-                  data-purecounter-duration="1"
-                  className="purecounter"
-                ></span>
-                <p>Projects</p>
-              </div>
-
-              <div className="col-lg-3 col-6 text-center">
-                <span
-                  data-purecounter-start="0"
-                  data-purecounter-end="1463"
-                  data-purecounter-duration="1"
-                  className="purecounter"
-                ></span>
-                <p>Hours Of Support</p>
-              </div>
-
-              <div className="col-lg-3 col-6 text-center">
-                <span
-                  data-purecounter-start="0"
-                  data-purecounter-end="15"
-                  data-purecounter-duration="1"
-                  className="purecounter"
-                ></span>
-                <p>Hard Workers</p>
-              </div>
-            </div>
-          </div>
-        </section>
-        {/* End Facts Section */}
-
-        {/* ======= Testimonials Section ======= */}
-        <section id="testimonials" className="testimonials">
-          <div className="container" data-aos="fade-up">
-            <div className="section-title">
-              <h2>Testimonials</h2>
-              <p>
-                Magnam dolores commodi suscipit. Necessitatibus eius consequatur
-                ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam
-                quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.
-                Quia fugiat sit in iste officiis commodi quidem hic quas.
-              </p>
-            </div>
-
-            <div
-              className="testimonials-slider swiper"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <div className="swiper-wrapper">
-                <div className="swiper-slide">
-                  <div className="testimonial-item">
-                    <img
-                      src="assets/img/testimonials/testimonials-1.jpg"
-                      className="testimonial-img"
-                      alt=""
-                    />
-                    <h3>Saul Goodman</h3>
-                    <h4>Ceo &amp; Founder</h4>
-                    <p>
-                      <i className="bx bxs-quote-alt-left quote-icon-left"></i>
-                      Proin iaculis purus consequat sem cure digni ssim donec
-                      porttitora entum suscipit rhoncus. Accusantium quam,
-                      ultricies eget id, aliquam eget nibh et. Maecen aliquam,
-                      risus at semper.
-                      <i className="bx bxs-quote-alt-right quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div>
-                {/* End testimonial item */}
-
-                <div className="swiper-slide">
-                  <div className="testimonial-item">
-                    <img
-                      src="assets/img/testimonials/testimonials-2.jpg"
-                      className="testimonial-img"
-                      alt=""
-                    />
-                    <h3>Sara Wilsson</h3>
-                    <h4>Designer</h4>
-                    <p>
-                      <i className="bx bxs-quote-alt-left quote-icon-left"></i>
-                      Export tempor illum tamen malis malis eram quae irure esse
-                      labore quem cillum quid cillum eram malis quorum velit
-                      fore eram velit sunt aliqua noster fugiat irure amet legam
-                      anim culpa.
-                      <i className="bx bxs-quote-alt-right quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div>
-                {/* End testimonial item */}
-
-                <div className="swiper-slide">
-                  <div className="testimonial-item">
-                    <img
-                      src="assets/img/testimonials/testimonials-3.jpg"
-                      className="testimonial-img"
-                      alt=""
-                    />
-                    <h3>Jena Karlis</h3>
-                    <h4>Store Owner</h4>
-                    <p>
-                      <i className="bx bxs-quote-alt-left quote-icon-left"></i>
-                      Enim nisi quem export duis labore cillum quae magna enim
-                      sint quorum nulla quem veniam duis minim tempor labore
-                      quem eram duis noster aute amet eram fore quis sint minim.
-                      <i className="bx bxs-quote-alt-right quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div>
-                {/* End testimonial item */}
-
-                <div className="swiper-slide">
-                  <div className="testimonial-item">
-                    <img
-                      src="assets/img/testimonials/testimonials-4.jpg"
-                      className="testimonial-img"
-                      alt=""
-                    />
-                    <h3>Matt Brandon</h3>
-                    <h4>Freelancer</h4>
-                    <p>
-                      <i className="bx bxs-quote-alt-left quote-icon-left"></i>
-                      Fugiat enim eram quae cillum dolore dolor amet nulla culpa
-                      multos export minim fugiat minim velit minim dolor enim
-                      duis veniam ipsum anim magna sunt elit fore quem dolore
-                      labore illum veniam.
-                      <i className="bx bxs-quote-alt-right quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div>
-                {/* End testimonial item */}
-
-                <div className="swiper-slide">
-                  <div className="testimonial-item">
-                    <img
-                      src="assets/img/testimonials/testimonials-5.jpg"
-                      className="testimonial-img"
-                      alt=""
-                    />
-                    <h3>John Larson</h3>
-                    <h4>Entrepreneur</h4>
-                    <p>
-                      <i className="bx bxs-quote-alt-left quote-icon-left"></i>
-                      Quis quorum aliqua sint quem legam fore sunt eram irure
-                      aliqua veniam tempor noster veniam enim culpa labore duis
-                      sunt culpa nulla illum cillum fugiat legam esse veniam
-                      culpa fore nisi cillum quid.
-                      <i className="bx bxs-quote-alt-right quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div>
-                {/* End testimonial item */}
-              </div>
-              <div className="swiper-pagination"></div>
-            </div>
-          </div>
-        </section>
-        {/* End Testimonials Section */}
+  
         {/*  */}
       </main>
       {/* End #main */}

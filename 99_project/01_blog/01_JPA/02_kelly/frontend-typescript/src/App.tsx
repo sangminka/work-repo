@@ -15,9 +15,13 @@ import FooterCom from "./components/common/FooterCom";
 import { Route, Routes } from "react-router-dom";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import Resume from "./pages/Resume";
+// import Resume from "./pages/Resume";
 import Service from "./pages/Service";
 import PortFolio from "./pages/PortFolio";
+import CustomerListPage from "./pages/customer/CustomerListPage";
+import CustomerPage from "./pages/customer/CustomerPage";
+import AddCustomerPage from "./pages/customer/AddCustomerPage";
+import CinemaListPage from "./pages/shop/CinemaListPage";
 
 function App() {
   return (
@@ -28,9 +32,17 @@ function App() {
         <Route path="/" element={<Home/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/contact" element={<Contact/>}/>
-        <Route path="/resume" element={<Resume/>}/>
+        {/* <Route path="/resume" element={<Resume/>}/> */}
         <Route path="/services" element={<Service/>}/>
         <Route path="/portFolio" element={<PortFolio/>}/>
+        {/* Customer */}
+        <Route path="/customer" element={<CustomerListPage/>}/>
+        <Route path="/customer/:cid" element={<CustomerPage />} />
+
+        <Route path="/add-customer" element={<AddCustomerPage/>}/>
+
+        {/* Cinema */}
+        <Route path="/cinema" element={<CinemaListPage/>}/>
 
 
       </Routes>

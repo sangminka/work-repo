@@ -26,16 +26,28 @@ function HeaderCom() {
                   About
                 </a>
               </li>
-              <li className='nav-itme'>
+              {/* <li className='nav-itme'>
                 <a href="/resume" className={location.pathname === '/resume' ? 'active' : ''}>
                   Resume
                 </a>
-              </li>
+              </li> */}
               <li className='nav-itme'>
                 <a href="/services" className={location.pathname === '/services' ? 'active' : ''}>
                   Services
                 </a>
               </li>
+              <li className="nav-item dropdown">
+          <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Portfolio
+          </a>
+          <ul className="dropdown-menu">
+            <li><a className="dropdown-item" href="/customer">조회 페이지</a></li>
+            <li><a className="dropdown-item" href="/add-customer">추가 페이지</a></li>
+            {/* <li><a className="dropdown-item" href="/customer/:cid">공공 데이터</a></li> */}
+            {/* <li><hr className="dropdown-divider"/></li> */}
+            <li><a className="dropdown-item" href="/cinema">공공 데이터</a></li>
+          </ul>
+        </li>
               <li className='nav-itme'>
                 <a href="/portfolio" className={location.pathname === '/portfolio' ? 'active' : ''}>
                   Portfolio

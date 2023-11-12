@@ -3,8 +3,9 @@ import React, { useEffect, useState } from "react";
 import TitleCom from "../../components/common/TitleCom";
 import { Link } from "react-router-dom";
 import IFileDb from "../../types/advanced/IFileDb";
-import FileDbService from "../../services/advanced/FileDbService";
+// import FileDbService from "../../services/advanced/FileDbService";
 import { data } from "jquery";
+import FileDbService from "../../services/advanced/FileDbService";
 
 function FileDbList() {
     // todo: 변수 정의
