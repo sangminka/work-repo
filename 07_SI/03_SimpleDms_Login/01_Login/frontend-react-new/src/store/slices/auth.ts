@@ -9,7 +9,10 @@ import IAuth from "../../types/auth/IAuth";
 const user = JSON.parse(localStorage.getItem("user")||"null");
 
 // 회원가입 공유함수(비동기함수) : createAsyncThunk(함수명, (변수)=>{실행문}) - 리덕스 비동기 함수 적용
-
+// thankAPI역활 : 에러메세지 처리 -> thankAPI.rejectWithValue(에러메세지)
+// async () => {await 함수명};
+// 1) 비동기함수 처리    : promise -> 함수실행.then().cathc()
+// 2) 비동기함수 처리 : async () => { await 함수실행}
 export const register = createAsyncThunk(
   "auth/register",
   async (user:IUser, thunkAPI) => {
