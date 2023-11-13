@@ -73,11 +73,11 @@ function CustomerList() {
   return (
     <>
       {/* 제목 start */}
-      <TitleCom title="Customer List" />
+      {/* <TitleCom title="Customer List" /> */}
       {/* 제목 end */}
 
       {/* question start(다양한 검색어 부분) */}
-      <div className="row mb-5 justify-content-center">
+      <div className="row mb-5 justify-content-center offset-1">
         <div className="col-md-8">
           <div className="input-group mb-3">
             {/* 다양한 검색(select: question,questioner) 시작 */}

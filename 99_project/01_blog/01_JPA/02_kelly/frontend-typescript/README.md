@@ -36,6 +36,8 @@ import GLightbox from 'glightbox';
 # waypoint
 npm install waypoint
 
+# jquery install
+npm i --save-dev @types/jquery
 
 
 
