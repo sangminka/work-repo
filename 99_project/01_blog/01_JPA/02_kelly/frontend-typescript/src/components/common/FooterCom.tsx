@@ -4,7 +4,7 @@ function FooterCom() {
   return (
     <>
      {/* ======= Footer ======= */} 
-  <footer id="footer">
+  <footer id="footer" className='fixed-bottom'>
     <div className="container">
       <div className="copyright">
         &copy; Copyright <strong><span>Kelly</span></strong>. All Rights Reserved

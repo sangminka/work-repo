@@ -25,7 +25,7 @@ function CustomerPage() {
             <section id="customer" className="customer">
               <div className="container" data-aos="fade-up">
                 <div className="row mt-5">
-                  <Customer />
+                  {/* <Customer /> */}
                 </div>
               </div>
             </section>

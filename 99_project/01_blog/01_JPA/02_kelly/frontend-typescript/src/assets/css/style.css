@@ -1176,7 +1176,8 @@ section {
 }
 
 .contact .info .email,
-.contact .info .phone {
+.contact .info .phone,
+.contact .info .git {
   margin-top: 40px;
 }
 

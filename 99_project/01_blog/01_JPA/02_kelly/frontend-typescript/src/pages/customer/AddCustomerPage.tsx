@@ -26,7 +26,7 @@ function AddCustomerPage() {
             <section id="customer" className="customer">
               <div className="container" data-aos="fade-up">
                 <div className="row mt-5">
-                  <AddCustomer />
+                  {/* <AddCustomer /> */}
                 </div>
               </div>
             </section>
