@@ -1,37 +1,34 @@
-// ReplyBoardList.tsx
+// ReplyBoardList.tsx : rfce
 import React, { useEffect, useState } from "react";
 import TitleCom from "../../../components/common/TitleCom";
-import { Pagination } from "@mui/material";
 import { Link } from "react-router-dom";
 import IReplyBoard from "../../../types/normal/IReplyBoard";
 import ReplyBoardService from "../../../services/normal/ReplyBoardService";
+import { Pagination } from "@mui/material";
 
 function ReplyBoardList() {
-  //TODO: 변수 정의
-  // 부서 배열 변수
-  // 답변글 1개반 달리게 제함
+  // todo: 변수 정의
+  // replyBoard(게시물+답변) 배열 변수
+  //   답변글 1개만 달리게 제한
   const [replyBoard, setReplyBoard] = useState<Array<IReplyBoard>>([]);
   // 검색어 변수
   const [searchBoardTitle, setSearchBoardTitle] = useState<string>("");
 
-  // TODO: 공통 변수 : page(현재페이지), count(총페이지건수), pageSize(3,6,9 배열)
+  // todo: 공통 변수 : page(현재페이지번호), count(총페이지건수), pageSize(3,6,9 배열)
   const [page, setPage] = useState<number>(1);
   const [count, setCount] = useState<number>(1);
-  const [pageSize, setPageSize] = useState<number>(3); // 1페이지당 개수
-  // TODO :pageSizes : 배열 (셀렉트 박스 사용)
+  const [pageSize, setPageSize] = useState<number>(3); // 1페이지당개수
+  // todo: 공통 pageSizes : 배열 (셀렉트 박스 사용)
   const pageSizes = [3, 6, 9];
 
-  // TODO: 함수 정의
-  // TODO: 1) 컴포넌트가 mounted 될때 한번만 실행됨 : useEffect(() => {실행문},[])
-  // TODO: 2) 컴포넌트의 변수값이 변할때 실행됨 : useEffect(() => {실행문},[감시변수])
+  // todo: 함수 정의
   useEffect(() => {
     retrieveReplyBoard(); // 전체 조회
   }, [page, pageSize]);
 
   //   전체조회 함수
   const retrieveReplyBoard = () => {
-    // 백엔드 매개변수 전송 : + 현재페이지(page), 1페이지당개수(pageSize)
-    ReplyBoardService.getAll(searchBoardTitle, page - 1, pageSize)
+    ReplyBoardService.getAll(searchBoardTitle, page - 1, pageSize) // 벡엔드 전체조회요청
       .then((response: any) => {
         const { replyBoard, totalPages } = response.data;
         setReplyBoard(replyBoard);
@@ -39,32 +36,33 @@ function ReplyBoardList() {
         console.log("response", response.data);
       })
       .catch((e: Error) => {
+        // 벡엔드 실패시 실행됨
         console.log(e);
       });
   };
 
-  //   검색어 수동 바인딩 함수
-  const onChangeSearchBoardTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //  검색어 수동 바인딩 함수
+  const onChangeSearchBoardTitle = (e: any) => {
     setSearchBoardTitle(e.target.value);
   };
 
-  // handlePageSizeChange : pageSize 값 변경시 실행되는 함수
-  // 수동 바인딩 : 화면값 -> 변수에 저장
+  // todo: handlePageSizeChange(공통) : pageSize 값 변경시 실행되는 함수
+  //  select 태그 수동 바인딩 : 화면값 -> 변수에 저장
   const handlePageSizeChange = (event: any) => {
     setPageSize(event.target.value); // 1페이지당 개수저장(3,6,9)
-    setPage(1); // 현재페이지 번호 :1로 강제설정
+    setPage(1); // 현재페이지번호 : 1로 강제설정
   };
 
-  // Pagination 수동 바인딩
-  // 페이지 번호를 누르면 => page 변수에 값 저장
+  //  todo: Pagination 수동 바인딩(공통)
+  //  페이지 번호를 누르면 => page 변수에 값 저장
   const handlePageChange = (event: any, value: number) => {
-    // value == 화면의 페이지 번호
+    // value == 화면의 페이지번호
     setPage(value);
   };
 
-  //---------------------------------------------------------------------------------------
-  //  TODO: 답변 변수 정의
-  //  reply 객체 초기화
+  // ---------------------------------------
+  // todo: 답변 변수 정의
+  // reply 객체 초기화
   const initialReply = {
     bid: null,
     boardTitle: "",
@@ -74,59 +72,66 @@ function ReplyBoardList() {
     boardGroup: null,
     boardParent: 0,
   };
-  // 답변글 입력 객체
+  // 답변 글 입력 객체
   const [reply, setReply] = useState(initialReply);
   // reply 버튼 클릭시 상태 저장할 변수 : true/false
   const [replyClicked, setReplyClicked] = useState(false);
 
-  // TODO: 답변 함수 정의
+  // todo: 답변 함수 정의
   // input 수동 바인딩 함수
   const handleInputChange = (event: any) => {
-    const { name, value } = event.target; // 화면 값
-    setReply({ ...reply, [name]: value }); // 변수 저장
+    const { name, value } = event.target; // 화면값
+    setReply({ ...reply, [name]: value }); // 변수저장
   };
+
   // 답변글 생성함수(insert)
   const saveReply = () => {
+    // 임시 객체
     let data = {
+      // reply.boardTitle 부모제목, reply.boardContent (부모내용), reply.bid(부모번호)
       boardTitle: reply.boardTitle,
       boardContent: reply.boardContent,
       boardWriter: reply.boardWriter,
       viewCnt: 0,
-    //   그룹번호(부모글 == 자식글)
-    // rule 1) 부모글 최초생성 또는 답변글 없을때 0 저장
-    //      2) 답변글 있으면 부모글 게시판번호(bid) 저장
+      // 그룹번호(부모글 == 자식글)
+      // rule : 1) 부모글 최초생성 또는 답변글 없을때 0 저장
+      //        2) 답변글 생성이면 부모글 게시판번호(bid) 저장
       boardGroup: reply.bid,
-    //  부모글 번호:
-    //  rule: 1) 부모글 최초생성 또는 답변글 없을때 자신의 게시판번호(bid) 저장
-    //        2) 답변글 생성이면 부모글 번호(bid)
-      boardParent: reply.bid
-    
+      // 부모글번호 :
+      // rule : 1) 부모글 최초생성 또는 답변글 없을때 자신의 게시판번호(bid) 저장
+      //        2) 답변글 생성이면 부모글번호(bid)
+      boardParent: reply.bid,
     };
-    ReplyBoardService.create(data)
-    .then((response:any)=>{
-        alert("답변글이 생성되었습니다.")
+
+    ReplyBoardService.create(data) // 벡엔드 답변글 저장 요청
+      .then((response: any) => {
+        alert("답변글이 생성되었습니다.");
         // 전체 재조회
         retrieveReplyBoard();
-        console.log(response.data)
-    })
-    .catch((e:Error)=>{
+        console.log(response.data);
+      })
+      .catch((e: Error) => {
         console.log(e);
-    });
-        
+      });
   };
-//   게시물 reply 버튼 클릭시 화면에 답변 입력창 보이게 하는 함수
-const newReply = (data:any) => { 
-    //매개변수 데이터(객체) 수정
-    setReply({...data,boardContent: ""});
-    // 답변 입력창 화면 보이기 : replyClicked = true
+
+  //  게시물 reply 버튼 클릭시 화면에 답변입력창 보이게 하는 함수
+  const newReply = (data: any) => {
+    // 매개변수 데이터(객체) 수정 : boardContent: "" 수정
+    // data == 부모글 객체임, reply = 부모글객체 저장
+    setReply({ ...data, boardContent: "" });
+    // 답변 입력창 화면보이기 : replyClicked = true
     setReplyClicked(true);
- }
-    // 답변 입력창 숨기기
-    const closeReply = () => {
-        setReplyClicked(false);
-    }
+  };
+
+  //  답변 입력창 숨기기
+  const closeReply = () => {
+    // 답변 입력창 화면숨기기 : replyClicked = false
+    setReplyClicked(false);
+  };
 
   return (
+    // 여기
     <div>
       {/* 제목 start */}
       <TitleCom title="Reply Board List" />
@@ -203,11 +208,11 @@ const newReply = (data:any) => {
                   <td>{data.boardWriter}</td>
                   <td>{data.viewCnt}</td>
                   <td>
-                    {/* 클릭: 아래 답변 폼이 열림 */}
+                    {/* 클릭 : 아래 답변 폼이 열림 */}
                     {data.boardParent == 0 && (
                       <Link to={"#"}>
-                        {/* 리엑트 : onClick={함수명} : 매개변수 없으면 */}
-                        {/* 리엑트 : onClick={()=>함수명(매개변수)} : 매개변수 있으면 */}
+                        {/* 리액트 : onClick={함수명} : 매개변수없으면 */}
+                        {/* 리액트 : onClick={()=>함수명(매개변수)} : 매개변수있으면 */}
                         <span
                           className="badge bg-warning"
                           onClick={() => newReply(data)}
@@ -218,7 +223,7 @@ const newReply = (data:any) => {
                     )}
                   </td>
                   <td>
-                    {/* 클릭 : 상세하면 이동 */}
+                    {/* 클릭 : 상세화면 이동 */}
                     <Link
                       to={
                         "/reply-board/bid/" +

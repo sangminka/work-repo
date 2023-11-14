@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+// Customer.tsx : rfce
+import React, { useEffect, useState } from "react";
+import TitleCom from "../../../components/common/TitleCom";
 import { useNavigate, useParams } from "react-router-dom";
 import ICustomer from "../../../types/basic/ICustomer";
-import TitleCom from "../../../components/common/TitleCom";
 import CustomerService from "../../../services/basic/CustomerService";
 
 function Customer() {
+  // todo: 변수 정의
   // 전체조회 페이지에서 전송한 기본키(cid)
   const { cid } = useParams();
   // 강제페이지 이동 함수
@@ -12,63 +14,65 @@ function Customer() {
 
   // 객체 초기화(상세조회 : 기본키 있음)
   const initialCustomer = {
-    cid: null,
+    cid: "",
     fullName: "",
     email: "",
     phone: "",
   };
 
-  // 수정될 객체
+  // 수정될객체
   const [customer, setCustomer] = useState<ICustomer>(initialCustomer);
-  // 화면에 수정 성공 메세지 찍기 변수
+  // 화면에 수정 성공에 메세지 찍기 변수
   const [message, setMessage] = useState<string>("");
 
-  // 상세조회 함수
-  const getCustomer = (cid: string) => {
-    CustomerService.get(cid) // 벡엔드로 상세조회 요청
-      .then((response: any) => {
-        setCustomer(response.data);
-        console.log(response.data);
-      })
-      .catch((e: Error) => {
-        console.log(e);
-      });
-  };
-
-  // 화면이 뜰때 실행되는 이벤트 + cid 값이 바뀌면 실행
-  useEffect(() => {
-    if (cid) getCustomer(cid);
-  }, [cid]);
-
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = event.target;
-    setCustomer({ ...customer, [name]: value });
-  };
-
-  // 수정 함수
-  const updateCustomer = () => {
-    CustomerService.update(customer.cid, customer) // 벡엔드로 수정 요청
-      .then((response: any) => {
-        console.log(response.data);
-        setMessage("The customer was updated successfully!");
-      })
-      .catch((e: Error) => {
-        console.log(e);
-      });
-  };
-
-  // 삭제함수
-  const deleteCustomer = () => {
-    CustomerService.remove(customer.cid) // 벡엔드로 삭제요청
-      .then((response: any) => {
-        console.log(response.data);
-        // 페이지 이동
-        navigate("/customer");
-      })
-      .catch((e: Error) => {
-        console.log(e);
-      });
-  };
+//   todo: 함수 정의
+    // 상세조회 함수
+    const getCustomer = (cid: string) => {
+        CustomerService.get(cid) // 벡엔드로 상세조회 요청
+          .then((response: any) => {
+            setCustomer(response.data);
+            console.log(response.data);
+          })
+          .catch((e: Error) => {
+            console.log(e);
+          });
+      };
+    
+      // 화면이 뜰때 실행되는 이벤트 + cid 값이 바뀌면 실행
+      useEffect(() => {
+        if (cid) getCustomer(cid);
+      }, [cid]);
+    
+      // input 태그 수동 바인딩
+      const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = event.target;
+        setCustomer({ ...customer, [name]: value });
+      };
+    
+      // 수정 함수
+      const updateCustomer = () => {
+        CustomerService.update(customer.cid, customer) // 벡엔드로 수정요청
+          .then((response: any) => {
+            console.log(response.data);
+            setMessage("customer 객체가 수정되었습니다.");
+          })
+          .catch((e: Error) => {
+            console.log(e);
+          });
+      };
+    
+      // 삭제함수
+      const deleteCustomer = () => {
+        CustomerService.remove(customer.cid) // 벡엔드로 삭제요청
+          .then((response: any) => {
+            console.log(response.data);
+            // 강제 페이지 이동 : 전체조회
+            navigate("/customer");
+          })
+          .catch((e: Error) => {
+            console.log(e);
+          });
+      };
 
   return (
     <>
@@ -82,10 +86,9 @@ function Customer() {
             <form>
               {/* fullName 입력창 시작 */}
               <div className="row g-3 align-items-center mb-3">
-                {/* fullName 입력창 시작 */}
                 <div className="col-3">
                   <label htmlFor="fullName" className="col-form-label">
-                    FullName
+                    Full Name
                   </label>
                 </div>
 
@@ -104,9 +107,8 @@ function Customer() {
               </div>
               {/* fullName 입력창 끝 */}
 
-              {/* fullName 입력창 시작 */}
+              {/* email 입력창 시작 */}
               <div className="row g-3 align-items-center mb-3">
-                {/* email 입력창 시작 */}
                 <div className="col-3">
                   <label htmlFor="email" className="col-form-label">
                     Email
@@ -126,7 +128,7 @@ function Customer() {
                   />
                 </div>
               </div>
-              {/* fullName 입력창 끝 */}
+              {/* email 입력창 끝 */}
 
               {/* phone 입력창 시작 */}
               <div className="row g-3 align-items-center mb-3">

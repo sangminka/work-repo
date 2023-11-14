@@ -1,40 +1,39 @@
-import React, { useEffect, useState } from "react";
+// AddFaq.tsx : rfce
+import React from "react";
 import TitleCom from "../../../components/common/TitleCom";
+import { useState } from "react";
 import IFaq from "../../../types/normal/IFaq";
 import FaqService from "../../../services/normal/FaqService";
 
 function AddFaq() {
-
-
-  // 객체 초기화
+  // todo: 변수 정의
   const initialFaq = {
     no: null,
     title: "",
     content: "",
   };
 
-  // 부서 객체
+  // faq객체
   const [faq, setFaq] = useState<IFaq>(initialFaq);
   // 저장버튼 클릭후 submitted = true 변경됨
   const [submitted, setSubmitted] = useState<boolean>(false);
 
+  // todo: 함수 정의
   // input 태그에 수동 바인딩
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = event.target; // 화면 값
-    setFaq({ ...faq, [name]: value });  // 변수 저장
+    const { name, value } = event.target; // 화면값
+    setFaq({ ...faq, [name]: value }); // 변수저장
   };
-
 
   // 저장 함수
   const saveFaq = () => {
+    // 임시 객체
     var data = {
-      // 임시 부서 객체
-      title: faq.title,
-      content: faq.content,
+        title: faq.title,
+        content: faq.content
     };
 
-    
-    FaqService.create(data)    // 저장 요청
+    FaqService.create(data) // 저장 요청
       .then((response: any) => {
         setSubmitted(true);
         console.log(response.data);
@@ -44,13 +43,14 @@ function AddFaq() {
       });
   };
 
-  // 새폼 보여주기 함수 : 변수값 변경 -> 함수 자동 갱신(리엑트 특징)
+  // 새폼 보여주기 함수 : 변수값 변경 -> 화면 자동 갱신(리액트 특징)
   const newFaq = () => {
-    setFaq(initialFaq); // 부서 초기화
-    setSubmitted(false);  // submitted 변수 초기화
+    setFaq(initialFaq); // faq 초기화
+    setSubmitted(false); // submitted 변수 초기화
   };
 
   return (
+    // 여기
     <div className="row">
       {submitted ? (
         <div className="col-6 mx-auto">
@@ -69,7 +69,7 @@ function AddFaq() {
             <div className="row g-3 align-items-center mb-3">
               <div className="col-3">
                 <label htmlFor="title" className="col-form-label">
-                Title
+                  Title
                 </label>
               </div>
 
@@ -90,7 +90,7 @@ function AddFaq() {
             <div className="row g-3 align-items-center mb-3">
               <div className="col-3">
                 <label htmlFor="content" className="col-form-label">
-                Content
+                  Content
                 </label>
               </div>
               <div className="col-9">
@@ -108,7 +108,10 @@ function AddFaq() {
             </div>
 
             <div className="row g-3 mt-3 mb-3">
-              <button onClick={saveFaq} className="btn btn-outline-primary ms-2 col">
+              <button
+                onClick={saveFaq}
+                className="btn btn-outline-primary ms-2 col"
+              >
                 Submit
               </button>
             </div>

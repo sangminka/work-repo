@@ -1,10 +1,11 @@
 // AddProduct.tsx : rfce
 // 상품추가 페이지(연습) , 관리자용
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TitleCom from "../../../components/common/TitleCom";
 import IProduct from "./../../../types/shop/IProduct";
 import ICode from "../../../types/admin/code/ICode";
 import ProductService from "../../../services/shop/ProductService";
+import CodeService from "../../../services/admin/code/CodeService";
 
 function AddProduct() {
   // todo: 변수 정의
@@ -67,6 +68,23 @@ function AddProduct() {
     setProduct(initialProduct); // 초기화
     setSubmitted(false); // submitted 변수 초기화
   };
+
+   //   todo: select 태그 에 반복문으로 code 데이터를 출력하는 함수
+  //   todo: code 전체 조회 함수(페이징 없음)
+  const retrieveCodeAll = () => {
+    CodeService.getAllNoPage()
+      .then((response) => {
+        setCode(response.data);
+        console.log("code", response.data);
+      })
+      .catch((e: Error) => {
+        console.log(e);
+      });
+  };
+
+  useEffect(() => {
+    retrieveCodeAll(); // code 전체조회(페이징 없음)
+  }, []);
 
   return (
     // 여기

@@ -1,4 +1,4 @@
-// CinemaList
+// CinemaList.tsx : rfce
 import React, { useEffect, useRef, useState } from "react";
 import TitleCom from "../../../components/common/TitleCom";
 import { Link } from "react-router-dom";
@@ -9,43 +9,39 @@ import imgCalendar from "../../../assets/img/calendar.png";
 
 function CinemaList() {
   // todo: 변수 정의
-  // 배열 변수
+  // cinema 배열 변수
   const [cinema, setCinema] = useState<Array<ICinema>>([]);
-  // 검색어(k: 한국영화, F : 외국영화) 변수
+  // nationCode(K : 한국영화, F : 외국영화) 검색어 변수
   const [searchNationCode, setSearchNationCode] = useState<string>("");
 
-  // TODO: 공통 변수 :pageSize(3,6,9 배열)
-  const [pageSize, setPageSize] = useState<number>(3); // 1페이지당 개수
-  // TODO :pageSizes : 배열 (셀렉트 박스 사용)
+  // todo: 공통 변수 : pageSize(3,6,9 배열)
+  const [pageSize, setPageSize] = useState<number>(3); // 1페이지당개수
+  // todo: 공통 pageSizes : 배열 (셀렉트 박스 사용)
   const pageSizes = [3, 6, 9];
-  // todo: 달력변수 정의
-  // useRef() : html 태그에 직접접근하게 하는 함수
-  // datepicker.current.value : 그 html 태그의 값
+
+  //   todo: 달력변수 정의
+  //   useRef() : html 태그에 직접접근하게 하는 함수
+  //   datepicker.current.value : 그 html 태그의 값
   const datepicker = useRef<any>();
 
-  // todo : 함수 정의
+  // todo: 함수 정의
   useEffect(() => {
-    // todo: 달력(jquery-ui 초기화)
+    // todo: 달력(jquery-ui) 초기화
     $("#datepicker").datepicker({
-        dateFormat: "yymmdd",
-        showOn: "button", // 버튼을 클릭하면 달력보이기
-        buttonImage: imgCalendar, // 버튼에 달력 이미지 보이기
-      });
+      dateFormat: "yymmdd",
+      showOn: "button", // 버튼을 클릭하면 달력보이기
+      buttonImage: imgCalendar, // 버튼에 달력 이미지 보이기
+    });
     retrieveCinema(); // 전체 조회
   }, [pageSize]);
 
   //   전체조회 함수
   const retrieveCinema = () => {
-
-    // 백엔드 매개변수 전송 : + 현재페이지(page), 1페이지당개수(pageSize)
-    // getall(현재 선택된 날짜, 영화구분, 페이지크기)
-    CinemaService.getAll(datepicker.current.value,searchNationCode,pageSize)
+    // getAll(현재선택된날짜, 영화구분, 페이지크기)
+    CinemaService.getAll(datepicker.current.value, searchNationCode, pageSize) // 벡엔드 전체조회요청
       .then((response: any) => {
-        // 백엔드 성공시 실행됨
-        // es6 문법 : 객체 분해 할당
-        const { dailyBoxOfficeList } = response.data.boxOfficeResult;        // dept 저장
+        const { dailyBoxOfficeList } = response.data.boxOfficeResult;
         setCinema(dailyBoxOfficeList);
-        // 로그 출력
         console.log("response", response.data);
       })
       .catch((e: Error) => {
@@ -53,18 +49,18 @@ function CinemaList() {
       });
   };
 
-  //   검색어 수동 바인딩 함수
-  const onChangeSearchNationCode = (e: React.ChangeEvent<HTMLSelectElement>) => {
+  //  검색어 수동 바인딩 함수
+  const onChangeSearchNationCode = (e: any) => {
     setSearchNationCode(e.target.value);
   };
 
-  // handlePageSizeChange : pageSize 값 변경시 실행되는 함수
-  // 수동 바인딩 : 화면값 -> 변수에 저장
+  // todo: handlePageSizeChange(공통) : pageSize 값 변경시 실행되는 함수
+  //  select 태그 수동 바인딩 : 화면값 -> 변수에 저장
   const handlePageSizeChange = (event: any) => {
     setPageSize(event.target.value); // 1페이지당 개수저장(3,6,9)
   };
-
   return (
+    // 여기
     <>
       {/* 제목 start */}
       <TitleCom title="Cinema List" />

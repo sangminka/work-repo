@@ -1,38 +1,34 @@
-// FileDb.tsx
+// FileDb.tsx : rfce
 // 첨부파일 수정 페이지
-import React, { useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom';
-import IFileDb from '../../types/advanced/IFileDb';
-import FileDbService from '../../services/advanced/FileDbService';
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import IFileDb from "./../../types/advanced/IFileDb";
+import FileDbService from "../../services/advanced/FileDbService";
 
 function FileDb() {
-    // todo 변수 부분
-    
-  // 전체조회 페이지에서 전송한 기본키(dno)
+  // todo: 변수 정의
+  // 전체조회 페이지에서 전송한 기본키(uuid)
   const { uuid } = useParams();
-  // 강제페이지 이동 함수
-//   let navigate = useNavigate();
 
+  // 객체 초기화(상세조회 : 기본키 있음)
   const initialFileDb = {
-    uuid : null,       // 기본키(범용적으로 유일한 값을 만들어주는 값)
-    fileTitle : "",     // 제목
-    fileContent : "",   // 내용
-    fileUrl : "",       // 파일 다운로드 URL
-
+    uuid: null, // 기본키(범용적으로 유일한 값을 만들어주는 값)
+    fileTitle: "", // 제목
+    fileContent: "", // 내용
+    fileUrl: "", // 파일 다운로드 URL
   };
 
-
-  // 수정될 객체
+  // uploadFileDb 수정될객체
   const [uploadFileDb, setUploadFileDb] = useState<IFileDb>(initialFileDb);
-  // 화면에 수정 성공 메세지 찍기 변수
+  // 화면에 수정 성공에 메세지 찍기 변수
   const [message, setMessage] = useState<string>("");
-  // todo: 현재 선택한 파일을 저장할 배열 변수
+  //   todo: 현재 선택한 파일을 저장할 배열변수
   const [selectedFiles, setSelectedFiles] = useState<FileList>();
-  // todo 함수 부분
 
+  // todo: 함수 정의
   // 상세조회 함수
   const getFileDb = (uuid: string) => {
-    FileDbService.getFileDb(uuid)          // 벡엔드로 상세조회 요청
+    FileDbService.getFileDb(uuid) // 벡엔드로 상세조회 요청
       .then((response: any) => {
         setUploadFileDb(response.data);
         console.log(response.data);
@@ -47,40 +43,38 @@ function FileDb() {
     if (uuid) getFileDb(uuid);
   }, [uuid]);
 
-
+  // input 태그 수동 바인딩
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setUploadFileDb({ ...uploadFileDb, [name]: value });
   };
 
-  // 수정 함수(파일 첨부)
+  // 수정 함수(파일첨부)
   const updateFileDb = () => {
-
     // 파일 선택한 변수
-    let currentFile = selectedFiles?.[0];// 1st 선택한 첨부 파일
+    let currentFile = selectedFiles?.[0]; // 1st 선택한 첨부파일
 
-     FileDbService.updateFileDb(uploadFileDb, currentFile) // 벡엔드로 수정 요청
+    FileDbService.updateFileDb(uploadFileDb, currentFile) // 벡엔드로 수정요청
       .then((response: any) => {
         console.log(response.data);
-        setMessage("수정 되었습니다.");
+        setMessage("수정되었습니다");
       })
       .catch((e: Error) => {
         console.log(e);
       });
   };
 
-   // todo: 파일 선택상자에서 이미지 선택시 실행되는 함수
- // 파일 선택상자 html 태그 : <input type="file" />
- const selectFile = (event:any) => { 
-    // 화면에서 이미지 선택시 저장된 객체는 : event.target.files
+  //   todo: 파일 선택상자에서 이미지 선택시 실행되는 함수
+  // 파일 선택상자 html 태그 : <input type="file" />
+  const selectFile = (event: any) => {
+    // 화면에서 이미지 선택시 저장된 객체 : event.target.files
     // 변수명 as 타입 : 개발자가 변수가 무조건 특정 타입이라고 보증함
     //                 (타입스크립트에서 체크 안함)
-    setSelectedFiles(event.target.files as FileList)
-  }
-
- 
+    setSelectedFiles(event.target.files as FileList);
+  };
 
   return (
+    // 여기
     <div className="edit-form">
       {/* <!-- 이미지명(fileTitle) 입력 박스 시작 --> */}
       <div className="mb-3 col-md-12">
@@ -141,7 +135,8 @@ function FileDb() {
         </div>
       )}
       {/* upload 성공/실패 메세지 출력 끝 */}
-    </div>  )
+    </div>
+  );
 }
 
-export default FileDb
+export default FileDb;

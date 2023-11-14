@@ -1,44 +1,41 @@
-// AddQna.tsx
+// AddQna.tsx : rfce
 import React, { useState } from "react";
 import TitleCom from "../../../components/common/TitleCom";
-import QnaService from "../../../services/basic/QnaService";
 import IQna from "../../../types/basic/IQna";
+import QnaService from "../../../services/basic/QnaService";
 
 function AddQna() {
-
-     // 객체 초기화
+  // 객체 초기화
   const initialQna = {
     qno: null,
     question: "",
-    questioner: "",
     answer: "",
+    questioner: "",
     answerer: "",
   };
 
-  // 부서 객체
+  // qna객체
   const [qna, setQna] = useState<IQna>(initialQna);
   // 저장버튼 클릭후 submitted = true 변경됨
   const [submitted, setSubmitted] = useState<boolean>(false);
 
   // input 태그에 수동 바인딩
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = event.target; // 화면 값
-    setQna({ ...qna, [name]: value });  // 변수 저장
+    const { name, value } = event.target; // 화면값
+    setQna({ ...qna, [name]: value }); // 변수저장
   };
-
 
   // 저장 함수
   const saveQna = () => {
+    // 임시 qna 객체
     var data = {
-      // 임시 부서 객체
-      question: qna.question,
-      questioner: qna.questioner,
-      answer: qna.answer,
-      answerer: qna.answerer,
+        question: qna.question,
+        answer: qna.answer,
+        questioner: qna.questioner,
+        answerer: qna.answerer,        
     };
 
-    
-    QnaService.create(data)    // 저장 요청
+    QnaService.create(data) // 저장 요청
       .then((response: any) => {
         setSubmitted(true);
         console.log(response.data);
@@ -48,15 +45,14 @@ function AddQna() {
       });
   };
 
-  // 새폼 보여주기 함수 : 변수값 변경 -> 함수 자동 갱신(리엑트 특징)
+  // 새폼 보여주기 함수 : 변수값 변경 -> 화면 자동 갱신(리액트 특징)
   const newQna = () => {
-    setQna(initialQna); // 부서 초기화
-    setSubmitted(false);  // submitted 변수 초기화
+    setQna(initialQna); // Qna 초기화
+    setSubmitted(false); // submitted 변수 초기화
   };
 
-
-
   return (
+    // 여기
     <div className="row">
       {submitted ? (
         <div className="col-6 mx-auto">
@@ -170,9 +166,9 @@ function AddQna() {
                 />
               </div>
             </div>
-            {/* answer 입력창 끝 */}
+            {/* answerer 입력창 끝 */}
 
-            {/* 저장버튼 시작 */}
+            {/* 저장 버튼 시작 */}
             <div className="row g-3 mt-3 mb-3">
               <button
                 onClick={saveQna}

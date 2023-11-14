@@ -1,3 +1,4 @@
+// Cinema.tsx : rfce
 import React, { useEffect, useState } from "react";
 import TitleCom from "../../../components/common/TitleCom";
 import { useParams } from "react-router-dom";
@@ -5,32 +6,35 @@ import ICinemaDetail from "../../../types/shop/ICinemaDetail";
 import CinemaService from "../../../services/shop/CinemaService";
 
 function Cinema() {
-  // todo : 변수 정의
+  // todo: 변수 정의
+  // 전체조회 페이지에서 전송한 기본키(movieCd)
   const { movieCd } = useParams();
 
-  // 객체 초기화
+  // 객체 초기화(상세조회 : 기본키 있음)
   const initialCinema = {
-    movieCd: "", // 영화 코드
-    movieNm: "", // 영화 명
-    prdtYear: "", // 제작 년도
-    showTm: "", // 상영 시간
-    openDt: "", // 개봉 연도
-    actors: [], // 배우들
+    movieCd: "", // 영화코드
+    movieNm: "", // 영화명
+    prdtYear: "", // 제작년도
+    showTm: "", // 상영시간
+    openDt: "", // 개봉연도
+    actors: [], // 배우들 배열
     directors: [], // 감독들 배열
     prdtStatNm: "", // 제작상태명
   };
-  // 수정될 객체
-  const [cinemaDetail, setCinemaDetail] = useState<ICinemaDetail>();
-  // 화면에 수정 성공에 메세지 찍기 변수
-  // todo : 함수 정의
+
+  // cinemaDetail 객체
+  const [cinemaDetail, setCinemaDetail] =
+    useState<ICinemaDetail>(initialCinema);
+
+  // todo: 함수 정의
   // 상세조회 함수
   const getCinema = (movieCd: string) => {
     CinemaService.get(movieCd) // 벡엔드로 상세조회 요청
       .then((response: any) => {
-        // 영화 상세정보 받기
+        // todo: 영화 상세정보 받기
         const { movieInfo } = response.data.movieInfoResult;
         setCinemaDetail(movieInfo);
-        console.log(movieInfo);
+        console.log(response.data.movieInfoResult);
       })
       .catch((e: Error) => {
         console.log(e);
@@ -42,8 +46,8 @@ function Cinema() {
     if (movieCd) getCinema(movieCd);
   }, [movieCd]);
 
-
   return (
+    // 여기
     <>
       {/* 제목 start */}
       <TitleCom title="Cinema Detail" />

@@ -1,14 +1,13 @@
-import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+// Faq.tsx : rfce
+import React, { useEffect, useState } from "react";
 import TitleCom from "../../../components/common/TitleCom";
+import { useNavigate, useParams } from "react-router-dom";
 import IFaq from "../../../types/normal/IFaq";
 import FaqService from "../../../services/normal/FaqService";
 
 function Faq() {
-    // no?: any|null,
-    // title : string,
-    // content : string,
-
+  // 변수 정의
+  // todo: 변수 정의
   // 전체조회 페이지에서 전송한 기본키(no)
   const { no } = useParams();
   // 강제페이지 이동 함수
@@ -16,19 +15,20 @@ function Faq() {
 
   // 객체 초기화(상세조회 : 기본키 있음)
   const initialFaq = {
-    no: "",
-    title: "",
-    content: "",
+    no: null,
+    title: "",    
+    content: ""   
   };
 
-  // 수정될 객체
+  // 수정될객체
   const [faq, setFaq] = useState<IFaq>(initialFaq);
-  // 화면에 수정 성공 메세지 찍기 변수
+  // 화면에 수정 성공에 메세지 찍기 변수
   const [message, setMessage] = useState<string>("");
 
+  // todo: 함수 정의
   // 상세조회 함수
   const getFaq = (no: string) => {
-    FaqService.get(no)          // 벡엔드로 상세조회 요청
+    FaqService.get(no)           // 벡엔드로 상세조회 요청
       .then((response: any) => {
         setFaq(response.data);
         console.log(response.data);
@@ -43,6 +43,7 @@ function Faq() {
     if (no) getFaq(no);
   }, [no]);
 
+  // input 태그 수동 바인딩
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setFaq({ ...faq, [name]: value });
@@ -50,10 +51,10 @@ function Faq() {
 
   // 수정 함수
   const updateFaq = () => {
-    FaqService.update(faq.no, faq) // 벡엔드로 수정 요청
+    FaqService.update(faq.no, faq) // 벡엔드로 수정요청
       .then((response: any) => {
         console.log(response.data);
-        setMessage("The faq was updated successfully!");
+        setMessage("faq 수정되었습니다.!");
       })
       .catch((e: Error) => {
         console.log(e);
@@ -86,7 +87,7 @@ function Faq() {
               <div className="row g-3 align-items-center mb-3">
                 <div className="col-3">
                   <label htmlFor="title" className="col-form-label">
-                  Title
+                    Title
                   </label>
                 </div>
 
@@ -107,7 +108,7 @@ function Faq() {
               <div className="row g-3 align-items-center mb-3">
                 <div className="col-3">
                   <label htmlFor="content" className="col-form-label">
-                  Content
+                    Content
                   </label>
                 </div>
 

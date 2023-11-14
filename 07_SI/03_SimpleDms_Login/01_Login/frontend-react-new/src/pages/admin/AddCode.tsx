@@ -1,52 +1,51 @@
+// AddCode.tsx : rfce
 import React, { useEffect, useState } from "react";
 import TitleCom from "../../components/common/TitleCom";
 import ICode from "../../types/admin/code/ICode";
-import ICodeCategory from "../../types/admin/code/ICodeCategory";
+import ICodeCategory from "./../../types/admin/code/ICodeCategory";
 import CodeService from "../../services/admin/code/CodeService";
-import CodecategoryService from "../../services/admin/code/CodeCategoryService";
+import CodeCategoryService from "../../services/admin/code/CodeCategoryService";
 
 function AddCode() {
   // todo: 변수 정의
-  // 객체 초기화
+  // todo: 객체 초기화
   const initialCode = {
-    codeId: 0,
-    codeName: "",
-    categoryId: 0,
-    categoryName: "",
-    useYn: "Y",
+    codeId: 0, // 공통코드ID
+    codeName: "", // 공통코드명
+    categoryId: 0, // 대분류코드ID
+    categoryName: "", // 대분류코드명
+    useYn: "Y", // 사용유무
   };
 
-  // 코드 저장 객체
+  // code 저장객체
   const [code, setCode] = useState<ICode>(initialCode);
-  // select 박스의 배열 값을 저장할 변수 : 대분류 코드명
+  // todo: select 박스의 배열 값을 저장할 변수 : 대분류코드명
   const [codeCategory, setCodeCategory] = useState<Array<ICodeCategory>>([]);
   // 저장버튼 클릭후 submitted = true 변경됨
   const [submitted, setSubmitted] = useState<boolean>(false);
-  
-  
+
   // todo: 함수 정의
-  // todo input 태그에 수동 바인딩
+  // todo: input 태그에 수동 바인딩
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = event.target; // 화면 값
-    setCode({ ...code, [name]: value }); // 변수 저장
+    const { name, value } = event.target; // 화면값
+    setCode({ ...code, [name]: value }); // 변수저장
   };
 
   // todo: select 태그에 수동 바인딩
   const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const { name, value } = event.target; // 화면 값
-    setCode({ ...code, [name]: value }); // 변수 저장
+    const { name, value } = event.target; // 화면값
+    setCode({ ...code, [name]: value }); // 변수저장
   };
-  
 
   // 저장 함수
   const saveCode = () => {
+    // 임시 객체
     var data = {
-      // 임시 부서 객체
-      codeId: code.codeId,
-      codeName: code.codeName,
-      categoryName : code.categoryName,
-      categoryId : code.categoryId ,
-      useYn: code.useYn,
+      codeId: code.codeId, // 공통코드ID
+      codeName: code.codeName, // 공통코드명
+      categoryId: code.categoryId, // 대분류코드ID
+      categoryName: "", // 대분류코드명(Code 테이블에 없음)
+      useYn: code.useYn, // 사용유무      
     };
 
     CodeService.create(data) // 저장 요청
@@ -59,31 +58,32 @@ function AddCode() {
       });
   };
 
-  // 새폼 보여주기 함수 : 변수값 변경 -> 함수 자동 갱신(리엑트 특징)
+  // 새폼 보여주기 함수 : 변수값 변경 -> 화면 자동 갱신(리액트 특징)
   const newCode = () => {
-    setCode(initialCode); // 부서 초기화
+    setCode(initialCode); // 초기화
     setSubmitted(false); // submitted 변수 초기화
   };
 
   // todo: select 태그의 값(대분류 코드) : 전체조회
-  // todo: 대분류 코드 : codeCategory
+  // todo: 대분류코드 : codeCategory
   const retrieveCodeCategoryAll = () => { 
-    CodecategoryService.getAllNoPage()
-    .then((response:any)=>{
-        const codeCategory = response.data;
-        setCodeCategory(codeCategory);
-        console.log("response.data",response.data)
+    CodeCategoryService.getAllNoPage()
+    .then((response: any)=>{
+      const codeCategory = response.data;
+      setCodeCategory(codeCategory);
+      console.log("response.data", response.data);
     })
     .catch((e:Error)=>{
-        console.log(e);
+      console.log(e);
     })
    }
 
    useEffect(()=>{
-    retrieveCodeCategoryAll(); //대분류 전체 조회
+    retrieveCodeCategoryAll(); // 대분류 전제 조회
    },[])
 
   return (
+    // 여기
     <div className="row">
       {submitted ? (
         <div className="col-6 mx-auto">
@@ -155,8 +155,8 @@ function AddCode() {
                   onChange={handleSelectChange}
                   name="categoryId"
                 >
-                  <option>selected item</option>
                   {/* select 박스의 목록 값 부분 : 반복문 수행 */}
+                  <option>selected item</option>
                   {codeCategory &&
                     codeCategory.map((data) => (
                       <option key={data.categoryId} value={data.categoryId}>

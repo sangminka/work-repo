@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+// Qna.tsx : rfce
+import React, { useEffect, useState } from "react";
+import TitleCom from "../../../components/common/TitleCom";
 import { useNavigate, useParams } from "react-router-dom";
 import IQna from "../../../types/basic/IQna";
-import TitleCom from "../../../components/common/TitleCom";
 import QnaService from "../../../services/basic/QnaService";
 
 function Qna() {
+  // todo: 변수 정의
   // 전체조회 페이지에서 전송한 기본키(qno)
   const { qno } = useParams();
   // 강제페이지 이동 함수
@@ -12,18 +14,19 @@ function Qna() {
 
   // 객체 초기화(상세조회 : 기본키 있음)
   const initialQna = {
-    qno: null,
+    qno: "",
     question: "",
-    questioner: "",
     answer: "",
+    questioner: "",
     answerer: "",
   };
 
-  // 수정될 객체
+  // 수정될객체
   const [qna, setQna] = useState<IQna>(initialQna);
-  // 화면에 수정 성공 메세지 찍기 변수
+  // 화면에 수정 성공에 메세지 찍기 변수
   const [message, setMessage] = useState<string>("");
 
+  // todo: 함수 정의
   // 상세조회 함수
   const getQna = (qno: string) => {
     QnaService.get(qno) // 벡엔드로 상세조회 요청
@@ -41,6 +44,7 @@ function Qna() {
     if (qno) getQna(qno);
   }, [qno]);
 
+  // input 태그 수동 바인딩
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setQna({ ...qna, [name]: value });
@@ -48,10 +52,10 @@ function Qna() {
 
   // 수정 함수
   const updateQna = () => {
-    QnaService.update(qna.qno, qna) // 벡엔드로 수정 요청
+    QnaService.update(qna.qno, qna) // 벡엔드로 수정요청
       .then((response: any) => {
         console.log(response.data);
-        setMessage("The qna was updated successfully!");
+        setMessage("qna 객체가 수정되었습니다.");
       })
       .catch((e: Error) => {
         console.log(e);
@@ -63,7 +67,7 @@ function Qna() {
     QnaService.remove(qna.qno) // 벡엔드로 삭제요청
       .then((response: any) => {
         console.log(response.data);
-        // 페이지 이동
+        // 강제 페이지 이동 : 전체조회
         navigate("/qna");
       })
       .catch((e: Error) => {
@@ -72,6 +76,7 @@ function Qna() {
   };
 
   return (
+    // 여기
     <>
       {/* 제목 start */}
       <TitleCom title="Qna Detail" />
@@ -81,10 +86,8 @@ function Qna() {
         {qna ? (
           <div className="col-6 mx-auto">
             <form>
-                {/* question 입력창 시작 */}
+              {/* question 입력창 시작 */}
               <div className="row g-3 align-items-center mb-3">
-             
-                {/* question 입력창 시작 */}
                 <div className="col-3">
                   <label htmlFor="question" className="col-form-label">
                     Question
@@ -104,34 +107,9 @@ function Qna() {
                   />
                 </div>
               </div>
-                {/* question 입력창 끝 */}
+              {/* question 입력창 끝 */}
 
-                 {/* question 입력창 시작 */}
-              <div className="row g-3 align-items-center mb-3">
-             
-             {/* questioner 입력창 시작 */}
-             <div className="col-3">
-               <label htmlFor="questioner" className="col-form-label">
-                 Questioner
-               </label>
-             </div>
-
-             <div className="col-9">
-               <input
-                 type="text"
-                 id="questioner"
-                 required
-                 className="form-control"
-                 value={qna.questioner}
-                 onChange={handleInputChange}
-                 placeholder="questioner"
-                 name="questioner"
-               />
-             </div>
-           </div>
-             {/* question 입력창 끝 */}
-
-                {/* answer 입력창 시작 */}
+              {/* answer 입력창 시작 */}
               <div className="row g-3 align-items-center mb-3">
                 <div className="col-3">
                   <label htmlFor="answer" className="col-form-label">
@@ -152,9 +130,32 @@ function Qna() {
                   />
                 </div>
               </div>
-                {/* answer 입력창 끝 */}
+              {/* answer 입력창 끝 */}
 
-                {/* answerer 입력창 시작 */}
+              {/* questioner 입력창 시작 */}
+              <div className="row g-3 align-items-center mb-3">
+                <div className="col-3">
+                  <label htmlFor="questioner" className="col-form-label">
+                    Questioner
+                  </label>
+                </div>
+
+                <div className="col-9">
+                  <input
+                    type="text"
+                    id="questioner"
+                    required
+                    className="form-control"
+                    value={qna.questioner}
+                    onChange={handleInputChange}
+                    placeholder="questioner"
+                    name="questioner"
+                  />
+                </div>
+              </div>
+              {/* questioner 입력창 끝 */}
+
+              {/* answerer 입력창 시작 */}
               <div className="row g-3 align-items-center mb-3">
                 <div className="col-3">
                   <label htmlFor="answerer" className="col-form-label">
@@ -175,10 +176,9 @@ function Qna() {
                   />
                 </div>
               </div>
-                {/* answer 입력창 끝 */}
-
+              {/* answerer 입력창 끝 */}
             </form>
-                
+
             <div className="row g-3 mt-3 mb-3">
               <button
                 onClick={deleteQna}

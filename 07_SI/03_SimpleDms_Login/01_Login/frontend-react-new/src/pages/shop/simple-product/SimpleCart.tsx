@@ -73,31 +73,32 @@ function SimpleCart() {
       });
   };
 
-  // todo: simple-cart(장바구니) 전체 조회 페이지로 이동하는 함수
+  // todo: /simple-cart(장바구니) 전체 조회 페이지로 이동하는 함수
   const goSimpleCart = () => {
     navigate("/simple-cart");
   };
 
-  // todo: 장바구니 개수 증가 함수
+  //  todo: 장바구니 개수 증가 함수
   const increaseCount = () => {
     cartCount += 1;
     setCartCount(cartCount); // 현재 증가값 저장
   };
-  // todo: 장바구니 개수 감소 함수
+
+  //  todo: 장바구니 개수 감소 함수
   const decreaseCount = () => {
-    if (cartCount > 0) {
+    if(cartCount > 0) {
       cartCount -= 1;
-      setCartCount(cartCount); // 현재 감소값 증가
+      setCartCount(cartCount); // 현재 감소값 저장
     }
   };
 
   // todo: 주문 결과 표시 함수
   const goOrder = () => { 
-    if(cartCount == 0){
-        setMessage("장바구니 개수를 증가시켜 주세요")
-        return; // 함수에서 강제 중단 (==break)
-    }
-    alert(`주문했습니다. ${simpleProduct.title}, ${cartCount}`)
+     if(cartCount == 0) {
+      setMessage("장바구니 개수를 증가시켜주세요")
+      return; // 함수에서 강제 중단 (==break)
+     }
+     alert(`주문했습니다. ${simpleProduct.title}, ${cartCount}`)
    }
 
   return (

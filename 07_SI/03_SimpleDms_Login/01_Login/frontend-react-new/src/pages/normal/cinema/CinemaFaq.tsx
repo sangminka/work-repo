@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+// CinemaFaq.tsx : rfce
+import React, { useEffect, useState } from "react";
 import TitleCom from "../../../components/common/TitleCom";
+import { useNavigate, useParams } from "react-router-dom";
 import ICinemaFaq from "../../../types/normal/ICinemaFaq";
 import CinemaFaqService from "../../../services/normal/CinemaFaqService";
 
-
 function CinemaFaq() {
-
+  // todo: 변수 정의
   // 전체조회 페이지에서 전송한 기본키(cfno)
   const { cfno } = useParams();
   // 강제페이지 이동 함수
@@ -15,19 +15,20 @@ function CinemaFaq() {
   // 객체 초기화(상세조회 : 기본키 있음)
   const initialCinemaFaq = {
     cfno: null,
-    question: "",
-    answer: "",
-    sortOrder: 0
+    question: "",             
+    answer: "",            
+    sortOrder: ""    
   };
 
-  // 수정될 객체
+  // 수정될객체
   const [cinemaFaq, setCinemaFaq] = useState<ICinemaFaq>(initialCinemaFaq);
-  // 화면에 수정 성공 메세지 찍기 변수
+  // 화면에 수정 성공에 메세지 찍기 변수
   const [message, setMessage] = useState<string>("");
-
+  
+  // todo: 함수 정의
   // 상세조회 함수
   const getCinemaFaq = (cfno: string) => {
-    CinemaFaqService.get(cfno)          // 벡엔드로 상세조회 요청
+    CinemaFaqService.get(cfno)           // 벡엔드로 상세조회 요청
       .then((response: any) => {
         setCinemaFaq(response.data);
         console.log(response.data);
@@ -42,6 +43,7 @@ function CinemaFaq() {
     if (cfno) getCinemaFaq(cfno);
   }, [cfno]);
 
+  // input 태그 수동 바인딩
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setCinemaFaq({ ...cinemaFaq, [name]: value });
@@ -49,10 +51,10 @@ function CinemaFaq() {
 
   // 수정 함수
   const updateCinemaFaq = () => {
-    CinemaFaqService.update(cinemaFaq.cfno, cinemaFaq) // 벡엔드로 수정 요청
+    CinemaFaqService.update(cinemaFaq.cfno, cinemaFaq) // 벡엔드로 수정요청
       .then((response: any) => {
         console.log(response.data);
-        setMessage("The cinemaFaq was updated successfully!");
+        setMessage("cinemaFaq 수정되었습니다.!");
       })
       .catch((e: Error) => {
         console.log(e);
@@ -73,6 +75,7 @@ function CinemaFaq() {
   };
 
   return (
+    // 여기
     <>
       {/* 제목 start */}
       <TitleCom title="CinemaFaq Detail" />
@@ -82,10 +85,11 @@ function CinemaFaq() {
         {cinemaFaq ? (
           <div className="col-6 mx-auto">
             <form>
+              {/* question 입력 시작 */}
               <div className="row g-3 align-items-center mb-3">
                 <div className="col-3">
                   <label htmlFor="question" className="col-form-label">
-                  Question
+                    Question
                   </label>
                 </div>
 
@@ -102,11 +106,13 @@ function CinemaFaq() {
                   />
                 </div>
               </div>
+              {/* question 입력 끝 */}
 
+              {/* answer 입력 시작 */}
               <div className="row g-3 align-items-center mb-3">
                 <div className="col-3">
                   <label htmlFor="answer" className="col-form-label">
-                  answer
+                    Answer
                   </label>
                 </div>
 
@@ -123,11 +129,13 @@ function CinemaFaq() {
                   />
                 </div>
               </div>
+              {/* answer 입력 끝 */}
 
+              {/* sortOrder 입력 시작 */}
               <div className="row g-3 align-items-center mb-3">
                 <div className="col-3">
                   <label htmlFor="sortOrder" className="col-form-label">
-                  SortOrder
+                    Sort Order
                   </label>
                 </div>
 
@@ -144,6 +152,7 @@ function CinemaFaq() {
                   />
                 </div>
               </div>
+              {/* sortOrder 입력 끝 */}
             </form>
 
             <div className="row g-3 mt-3 mb-3">

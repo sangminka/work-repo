@@ -11,7 +11,7 @@ import ForgotPassword from "./pages/auth/ForgotPassword";
 import NotFound from "./pages/common/NotFound";
 import DeptList from "./pages/basic/dept/DeptList";
 import EmpList from "./pages/basic/emp/EmpList";
-import AddDept from "./pages/basic/dept/AddDept";
+import AddDept from './pages/basic/dept/AddDept';
 import AddEmp from "./pages/basic/emp/AddEmp";
 import Dept from "./pages/basic/dept/Dept";
 import Emp from "./pages/basic/emp/Emp";
@@ -20,29 +20,27 @@ import CustomerList from "./pages/basic/customer/CustomerList";
 import AddQna from "./pages/basic/qna/AddQna";
 import AddCustomer from "./pages/basic/customer/AddCustomer";
 import Qna from "./pages/basic/qna/Qna";
-import FooterCom from "./components/common/FooterCom";
 import Customer from "./pages/basic/customer/Customer";
 import FaqList from "./pages/normal/faq/FaqList";
 import CinemaFaqList from "./pages/normal/cinema/CinemaFaqList";
 import AddFaq from "./pages/normal/faq/AddFaq";
-import AddCinemaFaq from "./pages/normal/cinema/AddCinemaFaq";
+import AddCinemaFaq from './pages/normal/cinema/AddCinemaFaq';
 import Faq from "./pages/normal/faq/Faq";
 import CinemaFaq from "./pages/normal/cinema/CinemaFaq";
-import ReplyBoardList from "./pages/normal/reply-board/ReplyBoardList";
-import ThreadBoard from "./pages/normal/ThreadBoard/ThreadBoard";
-import ThreadBoardList from "./pages/normal/ThreadBoard/ThreadBoardList";
+import ReplyBoardList from './pages/normal/reply-board/ReplyBoardList';
+import ThreadBoardList from "./pages/normal/thread-board/ThreadBoardList";
 import AddReplyBoard from "./pages/normal/reply-board/AddReplyBoard";
-import AddThreadBoard from "./pages/normal/ThreadBoard/AddThreadBoard";
+import AddThreadBoard from "./pages/normal/thread-board/AddThreadBoard";
 import ReplyBoard from "./pages/normal/reply-board/ReplyBoard";
 import CodeCategoryList from "./pages/admin/CodeCategoryList";
-import AddCodeCategory from "./pages/admin/AddCodeCategory";
+import AddCodeCategory from './pages/admin/AddCodeCategory';
 import CodeList from "./pages/admin/CodeList";
 import AddCode from "./pages/admin/AddCode";
 import Code from "./pages/admin/Code";
+import SimpleProductList from './pages/shop/simple-product/SimpleProductList';
 import ProductList from "./pages/shop/product/ProductList";
-import SimpleProductList from "./pages/shop/simple-product/SimpleProductList";
-import AddSimpleProduct from "./pages/shop/simple-product/AddSimpleProduct";
-import AddProduct from "./pages/shop/product/AddProduct";
+import AddSimpleProduct from './pages/shop/simple-product/AddSimpleProduct';
+import AddProduct from './pages/shop/product/AddProduct';
 import SimpleProduct from "./pages/shop/simple-product/SimpleProduct";
 import Product from "./pages/shop/product/Product";
 import SimpleCart from "./pages/shop/simple-product/SimpleCart";
@@ -79,7 +77,7 @@ function App() {
           <Route path="/add-dept" element={<AddDept />} />
           <Route path="/dept/:dno" element={<Dept />} />
 
-          {/* emp */}
+          {/* emp(연습) */}
           <Route path="/emp" element={<EmpList />} />
           <Route path="/add-emp" element={<AddEmp />} />
           <Route path="/emp/:eno" element={<Emp />} />
@@ -99,39 +97,32 @@ function App() {
           <Route path="/add-faq" element={<AddFaq />} />
           <Route path="/faq/:no" element={<Faq />} />
 
-          {/* Cinemafaq */}
+          {/* cinema faq */}
           <Route path="/cinema-faq" element={<CinemaFaqList />} />
           <Route path="/add-cinema-faq" element={<AddCinemaFaq />} />
           <Route path="/cinema-faq/:cfno" element={<CinemaFaq />} />
 
-          {/* ReplyBoard */}
+          {/* reply-board */}
           <Route path="/reply-board" element={<ReplyBoardList />} />
           <Route path="/add-reply-board" element={<AddReplyBoard />} />
           {/* 정리 : boardParent = 0 이면 부모글을 클릭 */}
-          {/* 정리 : boardParent = 0 이아니면 자식글을 클릭 */}
-          <Route
-            path="/reply-board/bid/:bid/boardParent/:boardParent"
-            element={<ReplyBoard />}
-          />
+          {/* 정리 : boardParent = 0 아니면 자식글을 클릭 */}
+          <Route path="/reply-board/bid/:bid/boardParent/:boardParent" element={<ReplyBoard />} />
 
-          {/* ThreadBoard */}
+          {/* thread-board */}
           <Route path="/thread-board" element={<ThreadBoardList />} />
           <Route path="/add-thread-board" element={<AddThreadBoard />} />
-          <Route
-            path="/thread-board/tid/:tid/tparent/:tparent"
-            element={<ThreadBoard />}
-          />
 
           {/* codeCategory(대분류 공통코드(부모)) */}
           <Route path="/code-category" element={<CodeCategoryList />} />
           <Route path="/add-code-category" element={<AddCodeCategory />} />
 
-          {/* Code */}
+          {/* code(소분류 공통코드(자식)) */}
           <Route path="/code" element={<CodeList />} />
           <Route path="/add-code" element={<AddCode />} />
           <Route path="/code/:codeId" element={<Code />} />
 
-          {/* SimpleProduct */}
+          {/* simple-product */}
           <Route path="/simple-product" element={<SimpleProductList />} />
           <Route path="/add-simple-product" element={<AddSimpleProduct />} />
           <Route path="/simple-product/:spno" element={<SimpleProduct />} />
@@ -140,16 +131,18 @@ function App() {
           {/* 장바구니 전체 조회 */}
           <Route path="/simple-cart" element={<SimpleCartList />} />
 
-          {/* Product */}
+          {/* product(연습) */}
           <Route path="/product" element={<ProductList />} />
           <Route path="/add-product" element={<AddProduct />} />
           <Route path="/product/:pno" element={<Product />} />
 
           {/* cinema */}
+          {/* 박스오피스 순위 전체조회 */}
           <Route path="/cinema" element={<CinemaList />} />
+          {/* 영화 상세조회 */}
           <Route path="/cinema/:movieCd" element={<Cinema />} />
 
-          {/* 부산 테마길(busan thema load) */}
+          {/* 부산 테마길( busan thema load ) */}
           <Route path="/thema-load" element={<ThemaLoadList />} />
 
           {/* 파일 업로드 */}
@@ -162,7 +155,6 @@ function App() {
         </Routes>
         {/* 라우터 정의 끝 */}
       </div>
-      <FooterCom />
     </div>
   );
 }

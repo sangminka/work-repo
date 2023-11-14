@@ -1,18 +1,20 @@
-import React, { useEffect, useState } from 'react'
-import TitleCom from '../../../components/common/TitleCom'
-import { useNavigate, useParams } from 'react-router-dom';
-import ISimpleProduct from '../../../types/shop/ISimpleProduct';
-import SimpleProductService from '../../../services/shop/SimpleProductService';
-import ICode from '../../../types/admin/code/ICode';
-import CodeService from '../../../services/admin/code/CodeService';
+// SimpleProduct.tsx : rfce
+import React, { useEffect, useState } from "react";
+import TitleCom from "../../../components/common/TitleCom";
+import { useParams } from "react-router-dom";
+import ISimpleProduct from './../../../types/shop/ISimpleProduct';
+import ICode from "../../../types/admin/code/ICode";
+import SimpleProductService from "../../../services/shop/SimpleProductService";
+import CodeService from "../../../services/admin/code/CodeService";
 
 function SimpleProduct() {
-     // 전체조회 페이지에서 전송한 기본키(spno)
+  // todo: 변수 정의
+  // 전체조회 페이지에서 전송한 기본키(spno)
   const { spno } = useParams();
   // 강제페이지 이동 함수
-  let navigate = useNavigate();
+//   let navigate = useNavigate();
 
-  // 객체 초기화(상세조회 : 기본키 있음)
+  // todo: 객체 초기화
   const initialSimpleProduct = {
     spno: null,
     codeId: 0,
@@ -21,16 +23,18 @@ function SimpleProduct() {
     unitPrice: 0,
     useYn: "Y",
   };
-  //   todo: code 배열 변수 : select 태그용
+
+//   todo: code 배열 변수 : select 태그용
   const [code, setCode] = useState<Array<ICode>>([]);
-  // 수정될 객체
+  // 수정될객체 : simpleProduct
   const [simpleProduct, setSimpleProduct] = useState<ISimpleProduct>(initialSimpleProduct);
-  // 화면에 수정 성공 메세지 찍기 변수
+  // 화면에 수정 성공에 메세지 찍기 변수
   const [message, setMessage] = useState<string>("");
 
+  // todo: 함수 정의
   // 상세조회 함수
   const getSimpleProduct = (spno: string) => {
-    SimpleProductService.get(spno)          // 벡엔드로 상세조회 요청
+    SimpleProductService.get(spno)         // 벡엔드로 상세조회 요청
       .then((response: any) => {
         setSimpleProduct(response.data);
         console.log(response.data);
@@ -45,28 +49,31 @@ function SimpleProduct() {
     if (spno) getSimpleProduct(spno);
   }, [spno]);
 
+  // input 태그 수동 바인딩
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setSimpleProduct({ ...simpleProduct, [name]: value });
-  };  
+  };
+
+  // todo: select 태그 수동 바인딩
   const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const { name, value } = event.target;
     setSimpleProduct({ ...simpleProduct, [name]: value });
   };
 
-
   // 수정 함수
   const updateSimpleProduct = () => {
-    SimpleProductService.update(simpleProduct.spno, simpleProduct) // 벡엔드로 수정 요청
+    SimpleProductService.update(simpleProduct.spno, simpleProduct) // 벡엔드로 수정요청
       .then((response: any) => {
         console.log(response.data);
-        setMessage("The simpleProduct was updated successfully!");
+        setMessage("수정되었습니다.");
       })
       .catch((e: Error) => {
         console.log(e);
       });
   };
-   //   todo: select 태그 에 반복문으로 code 데이터를 출력하는 함수
+
+  //   todo: select 태그 에 반복문으로 code 데이터를 출력하는 함수
   //   todo: code 전체 조회 함수(페이징 없음)
   const retrieveCodeAll = () => {
     CodeService.getAllNoPage()
@@ -79,13 +86,12 @@ function SimpleProduct() {
       });
   };
 
-
   useEffect(() => {
     retrieveCodeAll(); // code 전체조회(페이징 없음)
   }, []);
 
-
   return (
+    // 여기
     <>
       {/* 제목 start */}
       <TitleCom title="SimpleProduct Detail" />
@@ -223,7 +229,7 @@ function SimpleProduct() {
         )}
       </>
     </>
-  )
+  );
 }
 
-export default SimpleProduct
+export default SimpleProduct;

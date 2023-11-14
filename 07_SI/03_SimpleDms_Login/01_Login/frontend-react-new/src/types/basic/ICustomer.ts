@@ -1,7 +1,7 @@
+// ICustomer.ts
 export default interface ICustomer {
     cid?: any | null,
-    fullName: string,
-    email: string
-    phone: string
+    fullName: string, // question
+    email: string,    // answer
+    phone: string     // questioner
 }
-

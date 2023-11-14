@@ -1,3 +1,4 @@
+// ReplyBoard.tsx : 상세화면
 import React, { useEffect, useState } from "react";
 import TitleCom from "../../../components/common/TitleCom";
 import { useNavigate, useParams } from "react-router-dom";
@@ -5,16 +6,15 @@ import IReplyBoard from "../../../types/normal/IReplyBoard";
 import ReplyBoardService from "../../../services/normal/ReplyBoardService";
 
 function ReplyBoard() {
-  // TODO: 변수 정의
-  // 전체조회 페이지에서 전송한 기본키(bid)
-  // 전체조회 페이지에서 전송한 기본키(bid)
+  // todo: 변수 정의
+  // 전체조회 페이지에서 전송한 기본키(bid, boardParent)
   const { bid, boardParent } = useParams();
   // 강제페이지 이동 함수
   let navigate = useNavigate();
 
   // 객체 초기화(상세조회 : 기본키 있음)
   const initialReplyBoard = {
-    bid: null,
+    bid: "",
     boardTitle: "",
     boardContent: "",
     boardWriter: "",
@@ -23,12 +23,12 @@ function ReplyBoard() {
     boardParent: 0,
   };
 
-  // 수정될 객체
+  // 수정될객체
   const [replyBoard, setReplyBoard] = useState<IReplyBoard>(initialReplyBoard);
-  // 화면에 수정 성공 메세지 찍기 변수
+  // 화면에 수정 성공에 메세지 찍기 변수
   const [message, setMessage] = useState<string>("");
 
-  // TODO: 함수 정의
+  // todo: 함수 정의
   // 상세조회 함수
   const getReplyBoard = (bid: string) => {
     ReplyBoardService.get(bid) // 벡엔드로 상세조회 요청
@@ -46,6 +46,7 @@ function ReplyBoard() {
     if (bid) getReplyBoard(bid);
   }, [bid]);
 
+  // input 태그 수동 바인딩
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setReplyBoard({ ...replyBoard, [name]: value });
@@ -53,36 +54,37 @@ function ReplyBoard() {
 
   // 수정 함수
   const updateReplyBoard = () => {
-    ReplyBoardService.update(replyBoard.bid, replyBoard) // 벡엔드로 수정 요청
+    ReplyBoardService.update(replyBoard.bid, replyBoard) // 벡엔드로 수정요청
       .then((response: any) => {
         console.log(response.data);
-        setMessage("The replyBoard was updated successfully!");
+        setMessage("replyboard 수정되었습니다!");
       })
       .catch((e: Error) => {
         console.log(e);
       });
   };
 
-  // 삭제함수
-  // 게시물만 삭제
+  // 삭제함수 : 게시물만 삭제
   const deleteReply = () => {
     ReplyBoardService.remove(replyBoard.bid) // 벡엔드로 삭제요청
       .then((response: any) => {
         console.log(response.data);
         // 페이지 이동
-        navigate("/reply-Board");
+        navigate("/reply-board");
       })
       .catch((e: Error) => {
         console.log(e);
       });
   };
-  // 삭제함수 : 게시물 + 삭제 함수
+
+  // 삭제함수 : 게시물 + 답변글 2개 삭제 (그룹번호로 삭제)
+//   그룹번호(boardGroup) : 부모글번호 === 자식글번호
   const deleteReplyBoard = () => {
     ReplyBoardService.removeBoard(replyBoard.boardGroup) // 벡엔드로 삭제요청
       .then((response: any) => {
         console.log(response.data);
         // 페이지 이동
-        navigate("/reply-Board");
+        navigate("/reply-board");
       })
       .catch((e: Error) => {
         console.log(e);
@@ -90,6 +92,7 @@ function ReplyBoard() {
   };
 
   return (
+    // 여기
     <>
       {/* 제목 start */}
       <TitleCom title="Reply Board Detail" />
