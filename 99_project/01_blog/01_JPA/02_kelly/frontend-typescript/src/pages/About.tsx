@@ -23,8 +23,7 @@ function About() {
               <div className="col-lg-8 pt-4 pt-lg-0 content">
                 <h3>웹 개발자 &amp; 프론트/백엔드 개발자</h3>
                 <p className="fst-italic">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  성실히 노력하는 개발자 강상민 입니다.
                 </p>
 
                 <div className="row">
@@ -76,15 +75,7 @@ function About() {
                     </ul>
                   </div>
                 </div>
-                <p>
-                  Officiis eligendi itaque labore et dolorum mollitia officiis
-                  optio vero. Quisquam sunt adipisci omnis et ut. Nulla
-                  accusantium dolor incidunt officia tempore. Et eius omnis.
-                  Cupiditate ut dicta maxime officiis quidem quia. Sed et
-                  consectetur qui quia repellendus itaque neque. Aliquid amet
-                  quidem ut quaerat cupiditate. Ab et eum qui repellendus omnis
-                  culpa magni laudantium dolores.
-                </p>
+                
               </div>
             </div>
           </div>
@@ -312,7 +303,7 @@ function About() {
                   <h5>2023년</h5>
                   <p>
                     <em> 웹페이지 제작 </em><br/>
-                    팀프로젝트로 쇼핑몰 웹페이지를 제작하였습니다.
+                    항공사 사이트를 제작했습니다.
 
                   </p>
 

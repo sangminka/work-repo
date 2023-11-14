@@ -79,7 +79,7 @@ function HeaderCom() {
                   href="/portfolio"
                   className={location.pathname === "/portfolio" ? "active" : ""}
                 >
-                  Portfolio
+                  Skils
                 </a>
               </li>
               <li className="nav-itme">
