@@ -26,6 +26,11 @@ import java.util.List;
  */
 @Repository
 public interface CodeRepository extends JpaRepository<Code,Integer> {
+
+//    TODO: 유저 회원생성 사용
+//          codeName(권한:ROLE_USER, ROLE_ADMIN) 있는지 확인하는 함수
+    boolean existsByCodeName(String codeName);
+
 //    like 검색 : 대분류코드 + 소분류 코드 조인
     @Query(value = "SELECT CO.CODE_ID       AS codeId " +
             "      ,CO.CODE_NAME     AS codeName " +
@@ -58,4 +63,7 @@ public interface CodeRepository extends JpaRepository<Code,Integer> {
             "WHERE CO.CATEGORY_ID = CC.CATEGORY_ID "
             ,nativeQuery = true)
     List<CodeDto> selectAllNoPage();
+
+
+
 }

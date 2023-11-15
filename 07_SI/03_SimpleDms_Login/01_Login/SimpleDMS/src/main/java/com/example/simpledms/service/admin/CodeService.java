@@ -33,9 +33,8 @@ public class CodeService {
     /**
      * like 검색
      */
-    public Page<CodeDto> selectByCodeNameContaining(String codeName , Pageable pageable) {
-        Page<CodeDto> page = codeRepository
-                .selectByCodeNameContaining(codeName, pageable);
+    public Page<CodeDto> selectByCodeNameContaining(String codeName, Pageable pageable) {
+        Page<CodeDto> page = codeRepository.selectByCodeNameContaining(codeName, pageable);
         return page;
     }
 
@@ -52,8 +51,7 @@ public class CodeService {
      * 상세 조회
      */
     public Optional<Code> findById(int codeId) {
-        Optional<Code> optionalCode
-                = codeRepository.findById(codeId);
+        Optional<Code> optionalCode = codeRepository.findById(codeId);
         return optionalCode;
     }
 
@@ -63,5 +61,12 @@ public class CodeService {
     public Code save(Code code) {
         Code code2 = codeRepository.save(code);
         return code2; // db에 실제 저장된 객체
+    }
+
+    //    todo: 회원 생성 사용, 권한이 있는지 확인하는 함수
+    public boolean existsByCodeName(String codeName) {
+        boolean bResult = codeRepository.existsByCodeName(codeName);
+
+        return bResult;
     }
 }

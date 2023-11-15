@@ -14,11 +14,12 @@ import java.util.Date;
 public class JwtUtils {
 //  private static final Logger logger = LoggerFactory.getLogger(JwtUtils.class);
 
-  @Value("${simpleDms.app.jwtSecret}")
+  // todo: application.properties 파일을 속성값 가져오기 @Value("${속성명})
+  @Value("${simpleDms.app.jwtSecret}")  // 비밀키(웹토큰)
   private String jwtSecret;
 
   @Value("${simpleDms.app.jwtExpirationMs}")
-  private int jwtExpirationMs;
+  private int jwtExpirationMs;  // 만료시간
 
 //  JWT 토큰 만들기
   public String generateJwtToken(Authentication authentication) {
