@@ -21,6 +21,9 @@ import QnaListPage from './pages/qna/QnaListPage';
 import AddQnaPage from './pages/qna/AddQnaPage';
 import QnaPage from './pages/qna/QnaPage';
 import Reserve from './pages/reserve/Reserve';
+// import { Icon } from '@mui/material';
+import Sangmin from './pages/sangmin/Sangmin';
+import ReserveChoose from './pages/reserve/ReserveChoose';
 
 function App() {
   return (
@@ -37,7 +40,7 @@ function App() {
         <Route path="/elements" element={<Elements/>} />
 
         {/* 고객 */}
-        <Route path="/customer" element={<CustomerListPage/>} />
+        <Route path="/customer" element={<Home/>} />
         <Route path="/add-customer" element={<AddCustomerPage/>} />
         <Route path="/customer/:cid" element={<CustomerPage/>} />
 
@@ -45,6 +48,13 @@ function App() {
         <Route path="/qna" element={<QnaListPage/>} />
         <Route path="/add-qna" element={<AddQnaPage/>} />
         <Route path="/qna/:qno" element={<QnaPage/>} />
+
+        {/* test */}
+        <Route path="/icon" element={<Sangmin/>} />
+
+        {/* 예약 */}
+        <Route path="/reserve-choose" element={<ReserveChoose/>} />
+
       </Routes>
       
       {/* 꼬리말 */}

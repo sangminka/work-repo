@@ -46,7 +46,7 @@ function Nav() {
                     <a href="#">Menu Two</a>
                     <ul className="dropdown">
                       <li>
-                        <a href="#">Sub Menu One</a>
+                      <Link to="/icon">Icon</Link>
                       </li>
                       <li>
                         <a href="#">Sub Menu Two</a>
