@@ -1,0 +1,34 @@
+{
+  "totalItems": 8,
+  "replyBoard": [
+    {
+      "bid": 8,
+      "viewCnt": 0,
+      "boardTitle": "제목",
+      "boardParent": 0,
+      "boardContent": "내용",
+      "boardWriter": "작성자",
+      "boardGroup": 8
+    },
+    {
+      "bid": 7,
+      "viewCnt": 0,
+      "boardTitle": "제목",
+      "boardParent": 0,
+      "boardContent": "내용",
+      "boardWriter": "작성자",
+      "boardGroup": 7
+    },
+    {
+      "bid": 5,
+      "viewCnt": 0,
+      "boardTitle": "제목",
+      "boardParent": 0,
+      "boardContent": "내용",
+      "boardWriter": "작성자",
+      "boardGroup": 5
+    }
+  ],
+  "totalPages": 3,
+  "currentPage": 0
+}

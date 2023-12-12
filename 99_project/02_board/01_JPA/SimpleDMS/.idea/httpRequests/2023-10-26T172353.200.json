@@ -1,0 +1,34 @@
+{
+  "threadBoard": [
+    {
+      "subject": null,
+      "views": null,
+      "writer": null,
+      "tid": 8,
+      "tparent": null,
+      "mainText": "스프링부트는 자바코딩을 위한 프레임워크입니다.",
+      "tgroup": null
+    },
+    {
+      "subject": null,
+      "views": null,
+      "writer": null,
+      "tid": 7,
+      "tparent": null,
+      "mainText": "CSS 프레임워크로 부트스트랩이 가장 유명합니다.",
+      "tgroup": null
+    },
+    {
+      "subject": null,
+      "views": null,
+      "writer": null,
+      "tid": 5,
+      "tparent": null,
+      "mainText": "자바스크립트는 쉽나요?",
+      "tgroup": null
+    }
+  ],
+  "totalItems": 8,
+  "totalPages": 3,
+  "currentPage": 0
+}

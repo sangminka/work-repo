@@ -39,7 +39,9 @@ public class DeptController {
 
     //  전체 조회 + dname like 검색
     @GetMapping("/dept")
-    public ResponseEntity<Object> find(@RequestParam(defaultValue = "") String dname, @RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "3") int size) {
+    public ResponseEntity<Object> find(@RequestParam(defaultValue = "") String dname,
+                                       @RequestParam(defaultValue = "0") int page,
+                                       @RequestParam(defaultValue = "3") int size) {
         try {
 //            페이지 변수 저장(page: 현재페이지번호, size: 1페이지당 개수)
 //            함수 매개변수: Pageable(위의 값을 넣기)

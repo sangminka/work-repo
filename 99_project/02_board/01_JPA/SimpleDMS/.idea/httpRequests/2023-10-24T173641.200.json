@@ -1,0 +1,34 @@
+{
+  "totalItems": 4,
+  "faq": [
+    {
+      "insertTime": "2023-10-24 08:36:33",
+      "updateTime": null,
+      "deleteYn": "N",
+      "deleteTime": null,
+      "no": 1,
+      "title": "제목",
+      "content": "해결방법"
+    },
+    {
+      "insertTime": "2023-10-24 08:36:33",
+      "updateTime": null,
+      "deleteYn": "N",
+      "deleteTime": null,
+      "no": 2,
+      "title": "제목2",
+      "content": "해결방법2"
+    },
+    {
+      "insertTime": "2023-10-24 08:36:33",
+      "updateTime": null,
+      "deleteYn": "N",
+      "deleteTime": null,
+      "no": 3,
+      "title": "제목3",
+      "content": "해결방법3"
+    }
+  ],
+  "totalPages": 2,
+  "currentPage": 0
+}

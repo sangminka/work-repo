@@ -1,0 +1,16 @@
+{
+  "totalItems": 4,
+  "code": [
+    {
+      "codeId": 10001
+    },
+    {
+      "codeId": 20001
+    },
+    {
+      "codeId": 20002
+    }
+  ],
+  "totalPages": 2,
+  "currentPage": 0
+}

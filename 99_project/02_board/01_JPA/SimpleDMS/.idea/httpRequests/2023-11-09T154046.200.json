@@ -1,0 +1,15 @@
+{
+  "simpleCart": [
+    {
+      "codeId": 10001,
+      "title": "biker jacket",
+      "unitPrice": 10000,
+      "scno": 3,
+      "cartCount": 2,
+      "imgPath": "https://drive.google.com/uc?export=view&id=19ZnrTy82Ly6AVRkf6DxQssG9p-cgPN6r"
+    }
+  ],
+  "totalItems": 1,
+  "totalPages": 1,
+  "currentPage": 0
+}

@@ -1,0 +1,28 @@
+{
+  "totalItems": 4,
+  "code": [
+    {
+      "categoryName": "상품종류",
+      "categoryId": 100,
+      "codeId": 10001,
+      "codeName": "아우터",
+      "useYn": "Y"
+    },
+    {
+      "categoryName": "상품상태",
+      "categoryId": 200,
+      "codeId": 20001,
+      "codeName": "신상",
+      "useYn": "Y"
+    },
+    {
+      "categoryName": "상품상태",
+      "categoryId": 200,
+      "codeId": 20002,
+      "codeName": "이월상품",
+      "useYn": "Y"
+    }
+  ],
+  "totalPages": 2,
+  "currentPage": 0
+}

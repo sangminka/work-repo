@@ -1,0 +1,15 @@
+{
+  "codeCategory": [
+    {
+      "categoryId": 100,
+      "categoryName": "상품종류"
+    },
+    {
+      "categoryId": 200,
+      "categoryName": "상품상태"
+    }
+  ],
+  "totalItems": 2,
+  "totalPages": 1,
+  "currentPage": 0
+}

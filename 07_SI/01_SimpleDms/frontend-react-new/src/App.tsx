@@ -15,6 +15,7 @@ import AddDeptNop from "./pages/dept-nop/AddDeptNop";
 import AddEmpNop from "./pages/emp-nop/AddEmpNop";
 import DeptNop from "./pages/dept-nop/DeptNop";
 import EmpNop from "./pages/emp-nop/EmpNop";
+import Sangmin from "./pages/Sangmin";
 
 function App() {
   return (
@@ -31,7 +32,7 @@ function App() {
         {/* 라우터 정의 시작 */}
         <Routes>
           {/* login */}
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Sangmin />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />

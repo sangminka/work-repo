@@ -1,0 +1,37 @@
+{
+  "totalItems": 3,
+  "cinemaFaq": [
+    {
+      "insertTime": "2023-10-25 05:19:29",
+      "updateTime": null,
+      "deleteYn": "N",
+      "deleteTime": null,
+      "cfno": 1,
+      "question": "음식과 음료를 직접 가져올 수 있나요?",
+      "answer": "모든 Scenic Cinema 행사에 직접 소풍과 간식을 가져오셔도 좋습니다. 일부 장소에서는 주류에 대한 자체 정책이 있으므로 사전에 확인하시기 바랍니다. 음식, 스낵, 청량 음료, 커피 등은 대부분의 이벤트에서 제공되며 모든 공급업체가 카드 결제를 받는 것은 아니므로 현금을 지참하는 것이 좋습니다.  구내에서는 유리잔이나 바비큐가 허용되지 않습니다.",
+      "sortOrder": 90
+    },
+    {
+      "insertTime": "2023-10-25 05:19:29",
+      "updateTime": null,
+      "deleteYn": "N",
+      "deleteTime": null,
+      "cfno": 3,
+      "question": "게이트에서 표를 살 수 있나요?",
+      "answer": "아니요. 모든 티켓은 사전에 온라인으로 구매해야 합니다.",
+      "sortOrder": 70
+    },
+    {
+      "insertTime": "2023-10-25 05:19:29",
+      "updateTime": null,
+      "deleteYn": "N",
+      "deleteTime": null,
+      "cfno": 4,
+      "question": "환불받을 수 있나요?",
+      "answer": "티켓은 환불되지 않습니다. 자세한 내용은 이 사이트의 Ts & Cs 섹션을 참조하십시오 . 상영이 완전히 취소된 경우에만 환불됩니다. 상영을 다른 날짜로 연기해야 하는 경우 환불을 받을 수 없습니다. Covid 또는 기타 질병으로 인해 참석할 수 없는 경우 티켓을 다른 사람에게 양도할 수 있어 기쁩니다.",
+      "sortOrder": 60
+    }
+  ],
+  "totalPages": 1,
+  "currentPage": 0
+}

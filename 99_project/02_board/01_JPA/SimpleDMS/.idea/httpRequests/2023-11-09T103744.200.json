@@ -1,0 +1,31 @@
+{
+  "totalItems": 3,
+  "totalPages": 1,
+  "simpleProduct": [
+    {
+      "spno": 1,
+      "codeId": 10001,
+      "title": "biker jacket",
+      "imgPath": "https://drive.google.com/uc?export=view&id=19ZnrTy82Ly6AVRkf6DxQssG9p-cgPN6r",
+      "unitPrice": 10000,
+      "useYn": "Y"
+    },
+    {
+      "spno": 2,
+      "codeId": 10001,
+      "title": "blazzer",
+      "imgPath": "https://drive.google.com/uc?export=view&id=1S4jXE2sVwiPgnDO0Jel5SgfP5806iOXi",
+      "unitPrice": 20000,
+      "useYn": "Y"
+    },
+    {
+      "spno": 3,
+      "codeId": 10001,
+      "title": "trench coat",
+      "imgPath": "https://drive.google.com/uc?export=view&id=17amiK7ukwHJ9xdfi11A8Z48DjuZSeEzs",
+      "unitPrice": 30000,
+      "useYn": "Y"
+    }
+  ],
+  "currentPage": 0
+}
