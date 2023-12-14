@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../../assets/css/styles.css"
+import Scripts from "../../assets/js/scripts";
 
 function Header() {
   return (
@@ -14,11 +15,10 @@ function Header() {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarResponsive">
                     <ul className="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li className="nav-item"><a className="nav-link" href="#services">Services</a></li>
-                        <li className="nav-item"><a className="nav-link" href="#portfolio">Portfolio</a></li>
-                        <li className="nav-item"><a className="nav-link" href="#about">About</a></li>
-                        <li className="nav-item"><a className="nav-link" href="#team">Team</a></li>
-                        <li className="nav-item"><a className="nav-link" href="#contact">Contact</a></li>
+                        <li className="nav-item"><a className="nav-link" href="#services">About me</a></li>
+                        <li className="nav-item"><a className="nav-link" href="#portfolio">Skill</a></li>
+                        <li className="nav-item"><a className="nav-link" href="#about">Education</a></li>
+                        <li className="nav-item"><a className="nav-link" href="#team">Portfolio</a></li>
                     </ul>
                 </div>
             </div>
@@ -30,7 +30,7 @@ function Header() {
             <div className="container">
                 <div className="masthead-subheading">웹개발 & 프론트/백엔드 개발자</div>
                 <div className="masthead-heading text-uppercase">강상민</div>
-                <a className="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
+                <a className="btn btn-primary btn-xl text-uppercase" href="https://github.com/sangminka/work-repo">github</a>
             </div>
         </header>
     </div>

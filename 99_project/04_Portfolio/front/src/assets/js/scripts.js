@@ -7,7 +7,11 @@
 // Scripts
 // 
 
-window.addEventListener('DOMContentLoaded', event => {
+/* eslint-disable */
+export default function Scripts(){
+    (function() {
+      "use strict";
+
 
     // Navbar shrink function
     var navbarShrink = function () {
@@ -51,4 +55,5 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 
-});
+})()
+}
